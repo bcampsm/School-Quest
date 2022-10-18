@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/whiteButNotWhite"
     tools:context=".Login_PantallaInicial">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/ButtonLogin1"
         style="@style/LoginButtons"
         android:text="Soc Alumne"
         app:layout_constraintEnd_toEndOf="parent"
@@ -15,15 +16,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="207dp"
-        android:layout_height="56dp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:id="@+id/ButtonLogin2"
+        style="@style/LoginButtons"
         android:text="Soc Professor"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonLogin1" />
 
     <ImageView
         android:id="@+id/imageView2"
