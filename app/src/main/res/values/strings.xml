@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">SchoolQuest</string>
+    <string name="contrasenya">Contrassenya</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="recuperar_contrassenya">Recuperar contrassenya</string>
+    <string name="soc_alumne">Soc Alumne</string>
+    <string name="soc_professor">Soc Professor</string>
+    <string name="nova_tasca">Nova tasca</string>
+    <string name="nom_de_la_tasca">Nom de la tasca</string>
+    <string name="descripcio">Descripció</string>
+    <string name="data">Data</string>
+    <string name="xp">XP</string>
+    <string name="experiencia">Experiéncia</string>
+    <string name="sp">SP</string>
+    <string name="school_points">School Points</string>
+    <string name="nova_recompensa">Nova recompensa</string>
+    <string name="nom_de_la_recompensa">Nom de la recompensa</string>
+    <string name="subtasca">Subtasca</string>
+    <string name="notificacions">Notificacions</string>
+    <string name="idioma">Idioma</string>
+    <string name="tanca_sesio">Tanca sessió</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

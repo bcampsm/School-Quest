@@ -7,7 +7,6 @@ import com.example.schoolquest.R.style.Theme_SchoolQuest
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(Theme_SchoolQuest)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
