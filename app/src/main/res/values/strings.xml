@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">SchoolQuest</string>
+    <string name="grup_a">GRUP A</string>
+    <string name="grup_b">GRUP B</string>
+    <string name="grup_c">GRUP C</string>
+    <string name="noms">Noms</string>
+    <string name="asignatura">Asignatura</string>
+    <string name="grup_a_perfil">GRUP A</string>
+    <string name="grup_b_perfil">GRUP B</string>
+    <string name="grup_c_perfil">GRUP C</string>
+    <string name="nivell">Nivell:</string>
+    <string name="xp">XP</string>
+    <string name="tasques_completades">Tasques completades</string>
+    <string name="noms_alumne">Noms</string>
+    <string name="grup">Grup:</string>
+    <string name="nivell_perfil">Nivell:</string>
+    <string name="schoolpoints">SchoolPoints:</string>
+    <string name="xits_desbloquejats">Èxits desbloquejats</string>
+    <string name="generar_informe">Generar informe</string>
+    <string name="generar_informe_en_pdf">generar informe en pdf</string>
+    <string name="crear_recompensa">Crear Recompensa</string>
+    <string name="crear_tasca">Crear Tasca</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
     <string name="contrasenya">Contrassenya</string>
     <string name="email">Email</string>
     <string name="login">Login</string>
@@ -20,6 +41,5 @@
     <string name="notificacions">Notificacions</string>
     <string name="idioma">Idioma</string>
     <string name="tanca_sesio">Tanca sessió</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
