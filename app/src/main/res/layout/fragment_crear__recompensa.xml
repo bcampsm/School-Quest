@@ -25,8 +25,8 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="296dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="10dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:hint="@string/nova_recompensa"
                 app:counterEnabled="true"
@@ -45,8 +45,8 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="10dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:hint="@string/sp"
                 app:helperText="@string/school_points"
@@ -58,11 +58,6 @@
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -29,20 +29,20 @@
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/idioma"
-                    android:textSize="20dp"/>
+                    android:textSize="20sp"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/textButtonCat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Català"
-                    android:textSize="13dp"
+                    android:text="@string/catala"
+                    android:textSize="13sp"
                     android:textColor="@color/OrangeLight"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     />
 
@@ -50,10 +50,10 @@
                     android:id="@+id/textButtonEng"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="English"
-                    android:textSize="13dp"
+                    android:text="@string/english"
+                    android:textSize="13sp"
                     android:textColor="@color/OrangeLight"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     />
 
@@ -61,10 +61,10 @@
                     android:id="@+id/textButtonEsp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Español"
-                    android:textSize="13dp"
+                    android:text="@string/espanol"
+                    android:textSize="13sp"
                     android:textColor="@color/OrangeLight"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     />
 
@@ -79,11 +79,11 @@
 
                 <TextView
                     android:id="@+id/textViewNotificacions"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/notificacions"
-                    android:textSize="20dp"/>
+                    android:textSize="20sp"/>
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:layout_width="wrap_content"
@@ -99,10 +99,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tanca_sesio"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="@color/BlueLight"
-                android:layout_gravity="right"
-                android:layout_marginRight="10dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 />
 

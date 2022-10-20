@@ -9,12 +9,10 @@
     <string name="grup_b_perfil">GRUP B</string>
     <string name="grup_c_perfil">GRUP C</string>
     <string name="nivell">Nivell:</string>
-    <string name="xp">XP</string>
     <string name="tasques_completades">Tasques completades</string>
     <string name="noms_alumne">Noms</string>
     <string name="grup">Grup:</string>
     <string name="nivell_perfil">Nivell:</string>
-    <string name="schoolpoints">SchoolPoints:</string>
     <string name="xits_desbloquejats">Èxits desbloquejats</string>
     <string name="generar_informe">Generar informe</string>
     <string name="generar_informe_en_pdf">generar informe en pdf</string>
@@ -42,4 +40,8 @@
     <string name="idioma">Idioma</string>
     <string name="tanca_sesio">Tanca sessió</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo_schoolquest">Logo schoolquest</string>
+    <string name="catala">Català</string>
+    <string name="english">English</string>
+    <string name="espanol">Español</string>
 </resources>
