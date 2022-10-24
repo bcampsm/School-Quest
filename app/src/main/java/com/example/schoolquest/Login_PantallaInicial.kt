@@ -7,6 +7,7 @@ import com.example.schoolquest.R.style.Theme_SchoolQuest
 class Login_PantallaInicial : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(Theme_SchoolQuest)
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_pantalla_inicial)
     }
