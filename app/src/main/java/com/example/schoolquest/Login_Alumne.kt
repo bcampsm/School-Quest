@@ -38,7 +38,6 @@ class Login_Alumne : AppCompatActivity() {
 
             checkCredencials(email, password)
         }
-
     }
 
     private fun checkCredencials(email: String, password: String) {
@@ -48,20 +47,20 @@ class Login_Alumne : AppCompatActivity() {
             //Verificar que la contrasenya no sigui vuida
             when (password) {
                 "" -> {
-                    dialogBuilder("Error", "La contrasenya no pot ser vuida")
+                    dialogBuilder("La contrasenya no pot ser vuida")
                 }
                 else -> {
                     loginUsuari(email, password)
                 }
             }
         } else {
-            dialogBuilder("Error", "El correu no te un format válid")
+            dialogBuilder("El correu no te un format válid")
         }
     }
 
-    private fun dialogBuilder(tittle: String, message: String) {
+    private fun dialogBuilder(message: String) {
         val dialog = AlertDialog.Builder(this)
-            .setTitle(tittle)
+            .setTitle("Error")
             .setMessage(message)
             .create()
         dialog.show()

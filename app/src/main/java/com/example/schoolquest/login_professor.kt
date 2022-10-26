@@ -1,5 +1,6 @@
 package com.example.schoolquest
 
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,10 +35,34 @@ class login_professor : AppCompatActivity() {
             val password: String =
                 findViewById<TextInputEditText>(R.id.textFieldLoginProfessorPassword).text.toString()
 
-            loginProfessor(email, password)
-
+            checkCredencials(email, password)
         }
+    }
 
+    private fun checkCredencials(email: String, password: String) {
+        //Verificar format del correu
+        val pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`\\{|\\}~]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\$".toRegex()
+        if (pattern.containsMatchIn(email)) {
+            //Verificar que la contrasenya no sigui vuida
+            when (password) {
+                "" -> {
+                    dialogBuilder("La contrasenya no pot ser vuida")
+                }
+                else -> {
+                    loginProfessor(email, password)
+                }
+            }
+        } else {
+            dialogBuilder("El correu no te un format válid")
+        }
+    }
+
+    private fun dialogBuilder(message: String) {
+        val dialog = AlertDialog.Builder(this)
+            .setTitle("Error")
+            .setMessage(message)
+            .create()
+        dialog.show()
     }
 
     private fun loginProfessor(email: String, password: String) {
@@ -52,7 +77,7 @@ class login_professor : AppCompatActivity() {
                         .show()
                 } else {
                     // If sign in fails, display a message to the user.
-                    Snackbar.make(this.findViewById(android.R.id.content), "Autentication failed.", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(this.findViewById(android.R.id.content), "Error d'autenticacio", Snackbar.LENGTH_SHORT)
                         .show() //TODO()
                 }
             }
