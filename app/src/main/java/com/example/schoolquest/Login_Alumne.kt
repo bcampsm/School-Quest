@@ -39,9 +39,6 @@ class Login_Alumne : AppCompatActivity() {
             if (Common.checkCredencials(email, password,this)==true){
                 loginUsuari(email, password)
             }
-            else {
-                Common.dialogBuilder("El correu no te un format válid", this)
-            }
         }
     }
 
