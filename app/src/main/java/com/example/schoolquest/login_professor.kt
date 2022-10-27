@@ -33,9 +33,9 @@ class login_professor : AppCompatActivity() {
 
         btEnviar.setOnClickListener {
             val email: String =
-                findViewById<TextInputEditText>(R.id.textFieldLoginAlumneEmail).text.toString()
+                findViewById<TextInputEditText>(R.id.textFieldLoginProfessorEmail).text.toString()
             val password: String =
-                findViewById<TextInputEditText>(R.id.textFieldLoginAlumnePassword).text.toString()
+                findViewById<TextInputEditText>(R.id.textFieldLoginProfessorPassword).text.toString()
 
             if (Common.checkCredencials(email, password, this) == true) {
                 loginProfessor(email, password)
