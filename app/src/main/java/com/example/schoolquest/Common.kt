@@ -28,15 +28,13 @@ object Common {
             return false
 
         }
-        return false
     }
 
-    public fun dialogBuilder(message: String, ctx: Context) {
+    private fun dialogBuilder(message: String, ctx: Context) {
         val dialog = AlertDialog.Builder(ctx)
             .setTitle("Error")
             .setMessage(message)
             .create()
         dialog.show()
     }
-
 }
