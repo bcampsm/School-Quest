@@ -78,7 +78,7 @@ class login_professor : AppCompatActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Snackbar.make(this.findViewById(android.R.id.content), "Error d'autenticacio", Snackbar.LENGTH_SHORT)
-                        .show() //TODO()
+                        .show()
                 }
             }
     }

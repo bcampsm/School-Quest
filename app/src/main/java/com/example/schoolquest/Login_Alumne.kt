@@ -36,35 +36,40 @@ class Login_Alumne : AppCompatActivity() {
             val password: String =
                 findViewById<TextInputEditText>(R.id.textFieldLoginAlumnePassword).text.toString()
 
-            checkCredencials(email, password)
-        }
-    }
-
-    private fun checkCredencials(email: String, password: String) {
-        //Verificar format del correu
-        val pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`\\{|\\}~]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\$".toRegex()
-        if (pattern.containsMatchIn(email)) {
-            //Verificar que la contrasenya no sigui vuida
-            when (password) {
-                "" -> {
-                    dialogBuilder("La contrasenya no pot ser vuida")
-                }
-                else -> {
-                    loginUsuari(email, password)
-                }
+            if (Common.checkCredencials(email, password,this)==true){
+                loginUsuari(email, password)
             }
-        } else {
-            dialogBuilder("El correu no te un format válid")
+            else {
+                Common.dialogBuilder("El correu no te un format válid", this)
+            }
         }
     }
 
-    private fun dialogBuilder(message: String) {
-        val dialog = AlertDialog.Builder(this)
-            .setTitle("Error")
-            .setMessage(message)
-            .create()
-        dialog.show()
-    }
+//    public fun checkCredencials(email: String, password: String) {
+//        //Verificar format del correu
+//        val pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`\\{|\\}~]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\$".toRegex()
+//        if (pattern.containsMatchIn(email)) {
+//            //Verificar que la contrasenya no sigui vuida
+//            when (password) {
+//                "" -> {
+//                    dialogBuilder("La contrasenya no pot ser vuida")
+//                }
+//                else -> {
+//                    loginUsuari(email, password)
+//                }
+//            }
+//        } else {
+//            dialogBuilder("El correu no te un format válid")
+//        }
+//    }
+
+//    private fun dialogBuilder(message: String) {
+//        val dialog = AlertDialog.Builder(this)
+//            .setTitle("Error")
+//            .setMessage(message)
+//            .create()
+//        dialog.show()
+//    }
 
     private fun loginUsuari(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
@@ -87,7 +92,7 @@ class Login_Alumne : AppCompatActivity() {
                         "Error d'autenticacio.",
                         Snackbar.LENGTH_SHORT
                     )
-                        .show() //TODO()
+                        .show()
                 }
             }
     }

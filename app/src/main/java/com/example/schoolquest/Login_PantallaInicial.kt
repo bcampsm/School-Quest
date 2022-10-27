@@ -23,7 +23,7 @@ class Login_PantallaInicial : AppCompatActivity() {
         //Botó per obrir login_professor.kt
         val buttonProfessor = findViewById<Button>(R.id.ButtonLogin2)
         buttonProfessor.setOnClickListener {
-            val intent = Intent(this, Login_Alumne::class.java)
+            val intent = Intent(this, login_professor::class.java)
             startActivity(intent)
         }
     }
