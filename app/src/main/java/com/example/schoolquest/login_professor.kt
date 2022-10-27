@@ -19,6 +19,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class login_professor : AppCompatActivity() {
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,42 +28,19 @@ class login_professor : AppCompatActivity() {
         setContentView(R.layout.activity_login_professor)
 
         auth = Firebase.auth
+
         val btEnviar = findViewById<Button>(R.id.ButtonLoginProfessor1)
 
         btEnviar.setOnClickListener {
             val email: String =
-                findViewById<TextInputEditText>(R.id.textFieldLoginProfessorEmail).text.toString()
+                findViewById<TextInputEditText>(R.id.textFieldLoginAlumneEmail).text.toString()
             val password: String =
-                findViewById<TextInputEditText>(R.id.textFieldLoginProfessorPassword).text.toString()
+                findViewById<TextInputEditText>(R.id.textFieldLoginAlumnePassword).text.toString()
 
-            checkCredencials(email, password)
-        }
-    }
-
-    private fun checkCredencials(email: String, password: String) {
-        //Verificar format del correu
-        val pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`\\{|\\}~]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\$".toRegex()
-        if (pattern.containsMatchIn(email)) {
-            //Verificar que la contrasenya no sigui vuida
-            when (password) {
-                "" -> {
-                    dialogBuilder("La contrasenya no pot ser vuida")
-                }
-                else -> {
-                    loginProfessor(email, password)
-                }
+            if (Common.checkCredencials(email, password, this) == true) {
+                loginProfessor(email, password)
             }
-        } else {
-            dialogBuilder("El correu no te un format válid")
         }
-    }
-
-    private fun dialogBuilder(message: String) {
-        val dialog = AlertDialog.Builder(this)
-            .setTitle("Error")
-            .setMessage(message)
-            .create()
-        dialog.show()
     }
 
     private fun loginProfessor(email: String, password: String) {
@@ -73,11 +51,19 @@ class login_professor : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
-                    Snackbar.make(this.findViewById(android.R.id.content), "Login con éxito.", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(
+                        this.findViewById(android.R.id.content),
+                        "Login con éxito.",
+                        Snackbar.LENGTH_SHORT
+                    )
                         .show()
                 } else {
                     // If sign in fails, display a message to the user.
-                    Snackbar.make(this.findViewById(android.R.id.content), "Error d'autenticacio", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(
+                        this.findViewById(android.R.id.content),
+                        "Error d'autenticacio",
+                        Snackbar.LENGTH_SHORT
+                    )
                         .show()
                 }
             }
