@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textFieldNovaTasca"
+                android:id="@+id/layoutNovaTasca"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="296dp"
                 android:layout_height="wrap_content"
@@ -35,13 +35,14 @@
                 app:helperTextEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldNovaTasca"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textFieldSP"
+                android:id="@+id/layoutSP"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
@@ -53,6 +54,7 @@
                 app:helperTextEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldSP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />

@@ -29,7 +29,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textFieldLoginAlumneEmail"
+                android:id="@+id/layoutLoginAlumneEmail"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
@@ -42,6 +42,7 @@
                 app:boxCornerRadiusBottomEnd="30dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldLoginAlumneEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"/>
@@ -49,7 +50,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textFieldLoginAlumnePassword"
+                android:id="@+id/layoutLoginAlumnePassword"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/contrasenya"
@@ -63,6 +64,7 @@
                 app:boxCornerRadiusBottomEnd="30dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldLoginAlumnePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
