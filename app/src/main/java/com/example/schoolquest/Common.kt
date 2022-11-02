@@ -14,7 +14,7 @@ object Common {
             //Verificar que la contrasenya no sigui buida
             when (password) {
                 "" -> {
-                    dialogBuilder("La contrasenya no pot ser Buida", ctx)
+                    dialogBuilder("La contrasenya no pot ser Buida","Error", ctx)
                     return false
 
                 }
@@ -24,14 +24,14 @@ object Common {
                 }
             }
         } else {
-            dialogBuilder("El correu no te un format válid", ctx)
+            dialogBuilder("El correu no te un format válid", "Error", ctx)
             return false
 
         }
         return false
     }
 
-    public fun dialogBuilder(message: String, ctx: Context) {
+    public fun dialogBuilder(message: String, title: String, ctx: Context) {
         val dialog = AlertDialog.Builder(ctx)
             .setTitle("Error")
             .setMessage(message)
