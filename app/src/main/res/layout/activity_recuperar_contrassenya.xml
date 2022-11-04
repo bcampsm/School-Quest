@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whiteButNotWhite"
-    tools:context=".Login_PantallaInicial">
+    tools:context=".Recuperar_Contrassenya">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,13 +24,13 @@
             android:contentDescription="@string/logo_schoolquest" />
 
         <LinearLayout
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="75dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutLoginProfessorEmail"
+                android:id="@+id/layoutRecuperarContrasenya"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
@@ -43,49 +43,12 @@
                 app:boxCornerRadiusBottomEnd="30dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textFieldLoginProfessorEmail"
+                    android:id="@+id/textFieldRecuperarContrasenya"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutLoginProfessorPassword"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/contrasenya"
-                android:layout_gravity="center"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:endIconMode="password_toggle"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:boxCornerRadiusTopStart="30dp"
-                app:boxCornerRadiusTopEnd="30dp"
-                app:boxCornerRadiusBottomStart="30dp"
-                app:boxCornerRadiusBottomEnd="30dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textFieldLoginProfessorPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-
-                android:id="@+id/test"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:text="@string/recuperar_contrassenya"
-                android:textSize="12sp"
-                android:textColor="@color/BlueLight"
-                android:layout_gravity="end"
-                android:layout_marginEnd="50dp"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -93,13 +56,13 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonLoginProfessor1"
+                    android:id="@+id/ButtonRecuperarContrasenya"
                     style="@style/Widget.MaterialComponents.Button"
-                    android:layout_width="100sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
-                    android:text="@string/login"
+                    android:text="@string/recuperar_contrassenya"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:cornerRadius="30dp"/>
@@ -107,5 +70,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

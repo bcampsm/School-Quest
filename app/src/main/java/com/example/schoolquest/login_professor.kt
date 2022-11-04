@@ -2,12 +2,14 @@ package com.example.schoolquest
 
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View.inflate
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
 import androidx.core.content.res.ColorStateListInflaterCompat.inflate
@@ -22,15 +24,16 @@ class login_professor : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_professor)
 
+
         auth = Firebase.auth
 
         val btEnviar = findViewById<Button>(R.id.ButtonLoginProfessor1)
-
         btEnviar.setOnClickListener {
             val email: String =
                 findViewById<TextInputEditText>(R.id.textFieldLoginProfessorEmail).text.toString()
@@ -40,6 +43,12 @@ class login_professor : AppCompatActivity() {
             if (Common.checkCredencials(email, password, this) == true) {
                 loginProfessor(email, password)
             }
+        }
+
+        val buttonRecuperarcontrasenya = findViewById<TextView>(R.id.test)
+        buttonRecuperarcontrasenya.setOnClickListener {
+            val intent = Intent(this, Recuperar_Contrassenya::class.java)
+            startActivity(intent)
         }
     }
 
