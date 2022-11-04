@@ -33,7 +33,7 @@ object Common {
 
     public fun dialogBuilder(message: String, title: String, ctx: Context) {
         val dialog = AlertDialog.Builder(ctx)
-            .setTitle("Error")
+            .setTitle(title)
             .setMessage(message)
             .create()
         dialog.show()

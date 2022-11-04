@@ -35,7 +35,7 @@ class Recuperar_Contrassenya : AppCompatActivity() {
             Firebase.auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Common.dialogBuilder("Enllaç per recuperar la contrassenya, enviat al email", "Revisa el teu email", this)
+                        Common.dialogBuilder("Enllaç per recuperar la contrassenya enviat al email", "Revisa el teu email", this)
                     }
                 }
         }
