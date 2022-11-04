@@ -28,7 +28,6 @@ object Common {
             return false
 
         }
-        return false
     }
 
     public fun dialogBuilder(message: String, title: String, ctx: Context) {
@@ -38,5 +37,4 @@ object Common {
             .create()
         dialog.show()
     }
-
 }
