@@ -36,51 +36,51 @@ class MainActivity : AppCompatActivity() {
 
             when(it.itemId){
 
-                R.id.perfilMenu -> {
+                R.id.menuPerfil -> {
 
                     Snackbar.make(
                         this.findViewById(android.R.id.content),
-                        "perfilMenu",
+                        "menuPerfil",
                         Snackbar.LENGTH_SHORT
                     )
                         .show()
                 }
 
-                R.id.perfilTasques -> {
+                R.id.menuTasques -> {
 
                     Snackbar.make(
                         this.findViewById(android.R.id.content),
-                        "perfilMenu",
+                        "menuTasques",
                         Snackbar.LENGTH_SHORT
                     )
                         .show()
                 }
 
-                R.id.perfilCalendari -> {
+                R.id.menuCalendari -> {
 
                     Snackbar.make(
                         this.findViewById(android.R.id.content),
-                        "perfilMenu",
+                        "menuCalendari",
                         Snackbar.LENGTH_SHORT
                     )
                         .show()
                 }
 
-                R.id.perfilBotigaDeRecompenses -> {
+                R.id.menuBotigaDeRecompenses -> {
 
                     Snackbar.make(
                         this.findViewById(android.R.id.content),
-                        "perfilMenu",
+                        "menuBotigaDeRecompenses",
                         Snackbar.LENGTH_SHORT
                     )
                         .show()
                 }
 
-                R.id.perfilChat -> {
+                R.id.menuSettings -> {
 
                     Snackbar.make(
                         this.findViewById(android.R.id.content),
-                        "perfilMenu",
+                        "menuSettings",
                         Snackbar.LENGTH_SHORT
                     )
                         .show()
@@ -101,7 +101,10 @@ class MainActivity : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
         }
 
+
     }
+
+
 
 
 

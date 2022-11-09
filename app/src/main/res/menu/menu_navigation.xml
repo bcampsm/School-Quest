@@ -2,18 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/perfilMenu"
-        android:title="Perfil" />
+        android:id="@+id/menuPerfil"
+        android:title="Perfil"
+        android:icon="@drawable/perfil"/>
 
-    <item android:id="@+id/perfilTasques"
-        android:title="Tasques" />
+    <item android:id="@+id/menuTasques"
+        android:title="Tasques"
+        android:icon="@drawable/tasques"/>
 
-    <item android:id="@+id/perfilCalendari"
-        android:title="Calendari" />
+    <item android:id="@+id/menuCalendari"
+        android:title="Calendari"
+        android:icon="@drawable/calendar"/>
 
-    <item android:id="@+id/perfilBotigaDeRecompenses"
-        android:title="Botiga de recompenses" />
+    <item android:id="@+id/menuBotigaDeRecompenses"
+        android:title="Botiga de recompenses"
+        android:icon="@drawable/botiga"/>
 
-    <item android:id="@+id/perfilChat"
-        android:title="Chat" />
+    <item android:id="@+id/menuSettings"
+        android:title="Configuració"
+        android:icon="@drawable/configuracio"/>
+
+    <item android:id="@+id/logOut"
+        android:title="Tancar sessió"
+        android:icon="@drawable/logout"/>
+
 </menu>
