@@ -14,7 +14,7 @@ object Common {
             //Verificar que la contrasenya no sigui buida
             when (password) {
                 "" -> {
-                    dialogBuilder("La contrasenya no pot ser Buida","Error", ctx)
+                    dialogBuilder("La contrasenya no pot ser buida","Error", ctx)
                     return false
 
                 }

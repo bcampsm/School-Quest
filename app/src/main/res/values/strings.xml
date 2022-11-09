@@ -44,4 +44,6 @@
     <string name="catala">Català</string>
     <string name="english">English</string>
     <string name="espanol">Español</string>
+    <string name="openDrawer">openDrawer</string>
+    <string name="CloseDrawer">CloseDrawer</string>
 </resources>

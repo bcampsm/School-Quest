@@ -2,6 +2,7 @@ package com.example.schoolquest
 
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,7 +44,7 @@ class Login_Alumne : AppCompatActivity() {
         }
     }
 
-    private fun loginUsuari(email: String, password: String) {
+    private fun loginUsuari(email: String, password: String)  {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -57,6 +58,8 @@ class Login_Alumne : AppCompatActivity() {
                         Snackbar.LENGTH_SHORT
                     )
                         .show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
                     Snackbar.make(

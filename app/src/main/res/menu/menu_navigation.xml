@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/perfilMenu"
+        android:title="Perfil" />
+
+    <item android:id="@+id/perfilTasques"
+        android:title="Tasques" />
+
+    <item android:id="@+id/perfilCalendari"
+        android:title="Calendari" />
+
+    <item android:id="@+id/perfilBotigaDeRecompenses"
+        android:title="Botiga de recompenses" />
+
+    <item android:id="@+id/perfilChat"
+        android:title="Chat" />
+</menu>
