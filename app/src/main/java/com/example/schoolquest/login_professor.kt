@@ -40,7 +40,7 @@ class login_professor : AppCompatActivity() {
             val password: String =
                 findViewById<TextInputEditText>(R.id.textFieldLoginProfessorPassword).text.toString()
 
-            if (Common.checkCredencials(email, password, this) == true) {
+            if (Common.checkCredencials(email, password, this)) {
                 loginProfessor(email, password)
             }
         }
