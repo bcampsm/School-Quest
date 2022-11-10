@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.schoolquest.R.style.Theme_SchoolQuest
+import com.example.schoolquest.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
@@ -17,59 +18,54 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toogle: ActionBarDrawerToggle
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-        val navigationView = findViewById<NavigationView>(R.id.navigationView)
-
-
-        toogle = ActionBarDrawerToggle(this, drawerLayout, R.string.openDrawer, R.string.CloseDrawer )
-        drawerLayout.addDrawerListener(toogle)
+        toogle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.openDrawer, R.string.CloseDrawer )
+        binding.drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navigationView.setNavigationItemSelectedListener {
+        binding.navigationView.setNavigationItemSelectedListener {
 
             when(it.itemId){
 
                 R.id.menuPerfil -> {
 
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "menuPerfil",
                         Snackbar.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
 
                 R.id.menuTasques -> {
 
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "menuTasques",
                         Snackbar.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
 
                 R.id.menuCalendari -> {
 
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "menuCalendari",
                         Snackbar.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
 
                 R.id.menuBotigaDeRecompenses -> {
 
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "menuBotigaDeRecompenses",
                         Snackbar.LENGTH_SHORT
                     )
@@ -79,17 +75,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.menuSettings -> {
 
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "menuSettings",
                         Snackbar.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
             }
-
-                drawerLayout.openDrawer(GravityCompat.START)
-
-               true
+            binding.drawerLayout.openDrawer(GravityCompat.START)
+                true
             }
         }
 
@@ -97,24 +90,6 @@ class MainActivity : AppCompatActivity() {
             if (toogle.onOptionsItemSelected(item)){
                 return true
             }
-
             return super.onOptionsItemSelected(item)
         }
-
-
     }
-
-
-
-
-
-//    fun onOptionsItemSelected(item: MenuItem): Boolean {
-//
-//        if (toogle)
-//
-//        return super.onOptionsItemSelected(item)
-//    }
-
-
-
-
