@@ -1,5 +1,6 @@
 package com.example.schoolquest
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -13,6 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
 import androidx.core.content.res.ColorStateListInflaterCompat.inflate
 import com.example.schoolquest.R.style.Theme_SchoolQuest
+import com.example.schoolquest.databinding.ActivityLoginAlumneBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -22,54 +24,53 @@ import com.google.firebase.ktx.Firebase
 class Login_Alumne : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityLoginAlumneBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_alumne)
+        binding = ActivityLoginAlumneBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         auth = Firebase.auth
 
-        val btEnviar = findViewById<Button>(R.id.ButtonLoginAlumne1)
-
-        btEnviar.setOnClickListener {
+        //Botó que envia els valors dels textFields
+        binding.ButtonLoginAlumne1.setOnClickListener {
             val email: String =
-                findViewById<TextInputEditText>(R.id.textFieldLoginAlumneEmail).text.toString()
+                binding.textFieldLoginAlumneEmail.text.toString()
             val password: String =
-                findViewById<TextInputEditText>(R.id.textFieldLoginAlumnePassword).text.toString()
+                binding.textFieldLoginAlumnePassword.text.toString()
 
+            //Crida a metode per verificar credencials
             if (Common.checkCredencials(email, password, this) == true) {
                 loginUsuari(email, password)
             }
         }
     }
 
+    //Metode per verificar si l'usuari ha pogut iniciar sessió
     private fun loginUsuari(email: String, password: String)  {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-
-                    // Sign in success, update UI with the signed-in user's information
+                    //Inici de sessió amb éxit, envia l'usuari a la pantalla principal de tasques
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "Login con éxito.",
                         Snackbar.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
+                    //Si les credencials son incorrectes o hi ha un error de connexió, mostra aquest missatge
                     Snackbar.make(
-                        this.findViewById(android.R.id.content),
+                        binding.root,
                         "Error d'autenticacio.",
                         Snackbar.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
             }
     }
-
 }
