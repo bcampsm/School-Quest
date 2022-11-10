@@ -5,24 +5,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.schoolquest.R.style.Theme_SchoolQuest
+import com.example.schoolquest.databinding.ActivityLoginPantallaInicialBinding
 
 class Login_PantallaInicial : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLoginPantallaInicialBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(Theme_SchoolQuest)
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_pantalla_inicial)
+        val binding = ActivityLoginPantallaInicialBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Botó per obrir Login_Alumne.kt
-        val buttonAlumne = findViewById<Button>(R.id.ButtonLogin1)
-        buttonAlumne.setOnClickListener {
+        binding.ButtonLogin1.setOnClickListener {
             val intent = Intent(this, Login_Alumne::class.java)
             startActivity(intent)
         }
 
         //Botó per obrir login_professor.kt
-        val buttonProfessor = findViewById<Button>(R.id.ButtonLogin2)
-        buttonProfessor.setOnClickListener {
+        binding.ButtonLogin2.setOnClickListener {
             val intent = Intent(this, login_professor::class.java)
             startActivity(intent)
         }

@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
 import androidx.core.content.res.ColorStateListInflaterCompat.inflate
 import com.example.schoolquest.R.style.Theme_SchoolQuest
+import com.example.schoolquest.databinding.ActivityRecuperarContrassenyaBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -20,18 +21,21 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class Recuperar_Contrassenya : AppCompatActivity() {
+
+    private lateinit var binding: ActivityRecuperarContrassenyaBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recuperar_contrassenya)
+        val binding = ActivityRecuperarContrassenyaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-
-        val btEnviar = findViewById<Button>(R.id.ButtonRecuperarContrasenya)
-
-        btEnviar.setOnClickListener {
+        //Listener per al boto
+        binding.ButtonRecuperarContrasenya.setOnClickListener {
             val email: String =
-                findViewById<TextInputEditText>(R.id.textFieldRecuperarContrasenya).text.toString()
+                binding.textFieldRecuperarContrasenya.text.toString()
 
+            //Notificar que el correu s'ha enviat
             Firebase.auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
@@ -39,6 +43,5 @@ class Recuperar_Contrassenya : AppCompatActivity() {
                     }
                 }
         }
-
     }
 }
