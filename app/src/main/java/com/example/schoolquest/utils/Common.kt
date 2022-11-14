@@ -1,4 +1,4 @@
-package com.example.schoolquest
+package com.example.schoolquest.utils
 
 import android.app.AlertDialog
 import android.content.Context

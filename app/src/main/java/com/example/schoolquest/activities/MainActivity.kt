@@ -1,17 +1,12 @@
-package com.example.schoolquest
+package com.example.schoolquest.activities
 
-import android.content.ClipData.Item
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Button
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import com.example.schoolquest.R.style.Theme_SchoolQuest
+import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -25,7 +20,10 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toogle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.openDrawer, R.string.CloseDrawer )
+        toogle = ActionBarDrawerToggle(this, binding.drawerLayout,
+            R.string.openDrawer,
+            R.string.CloseDrawer
+        )
         binding.drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
 

@@ -1,9 +1,8 @@
-package com.example.schoolquest
+package com.example.schoolquest.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import com.example.schoolquest.R.style.Theme_SchoolQuest
 import com.example.schoolquest.databinding.ActivityLoginPantallaInicialBinding
 

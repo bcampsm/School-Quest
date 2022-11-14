@@ -1,4 +1,4 @@
-package com.example.schoolquest
+package com.example.schoolquest.utils
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.schoolquest.R
 
 class TasquesAdapter (private val mContacts: List<Contact>) : RecyclerView.Adapter<TasquesAdapter.ViewHolder>() {
 
@@ -18,7 +19,7 @@ class TasquesAdapter (private val mContacts: List<Contact>) : RecyclerView.Adapt
         val messageButton = itemView.findViewById<Button>(R.id.ButtonCard)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TasquesAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         // Inflate the custom layout
@@ -28,7 +29,7 @@ class TasquesAdapter (private val mContacts: List<Contact>) : RecyclerView.Adapt
     }
 
     // Involves populating data into the item through holder
-    override fun onBindViewHolder(viewHolder: TasquesAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get the data model based on position
         val contact: Contact = mContacts.get(position)
         // Set item views based on your views and data model
