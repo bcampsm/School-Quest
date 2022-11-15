@@ -1,6 +1,6 @@
 package com.example.schoolquest.utils
 
-class Contact(val name: String, val isOnline: Boolean) {
+data class Contact(val name: String, val isOnline: Boolean) {
 
     companion object {
         private var lastContactId = 0

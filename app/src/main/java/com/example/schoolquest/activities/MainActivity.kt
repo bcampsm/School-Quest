@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ActivityMainBinding
+import com.example.schoolquest.fragments.Tasques_Alumne
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -82,6 +83,12 @@ class MainActivity : AppCompatActivity() {
             binding.drawerLayout.openDrawer(GravityCompat.START)
                 true
             }
+
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.fragmentContainerView2, Tasques_Alumne())
+        transaction.addToBackStack(null)
+        transaction.commit()
         }
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {

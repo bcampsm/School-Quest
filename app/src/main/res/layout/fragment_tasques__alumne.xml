@@ -90,6 +90,8 @@
                     android:id="@+id/rvTasques"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    tools:listitem="@layout/tasques_alumne_cards"
+                    tools:context=".fragments.Tasques_Alumne"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
