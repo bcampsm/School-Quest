@@ -3,27 +3,27 @@
 
     <item
         android:id="@+id/menuPerfil2"
-        android:title="Perfil"
+        android:title="Perfil2"
         android:icon="@drawable/perfil"/>
 
     <item android:id="@+id/menuTasques2"
-        android:title="Tasques"
+        android:title="Tasques2"
         android:icon="@drawable/tasques"/>
 
     <item android:id="@+id/menuCalendari2"
-        android:title="Calendari"
+        android:title="Calendari2"
         android:icon="@drawable/calendar"/>
 
     <item android:id="@+id/menuBotigaDeRecompenses2"
-        android:title="Botiga de recompenses"
+        android:title="Botiga de recompenses2"
         android:icon="@drawable/botiga"/>
 
     <item android:id="@+id/menuSettings2"
-        android:title="Configuració"
+        android:title="Configuració2"
         android:icon="@drawable/configuracio"/>
 
     <item android:id="@+id/logOut2"
-        android:title="Tancar sessió"
+        android:title="Tancar sessió2"
         android:icon="@drawable/logout"/>
 
 </menu>
