@@ -5,12 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
+import com.example.schoolquest.databinding.ActivityMainBinding
+import com.example.schoolquest.databinding.FragmentTasquesAlumneBinding
+import com.example.schoolquest.utils.Contact
+import com.example.schoolquest.utils.TasquesAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+private lateinit var adapter : TasquesAdapter
+private lateinit var recyclerView: RecyclerView
+private lateinit var tasquesArrayList: ArrayList<Contact>
 
 /**
  * A simple [Fragment] subclass.
@@ -30,12 +40,28 @@ class Tasques_Alumne : Fragment() {
         }
     }
 
+    private var _binding: FragmentTasquesAlumneBinding? = null
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tasques__alumne, container, false)
+        _binding = FragmentTasquesAlumneBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initializeData()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = binding.rvTasques
+        recyclerView.layoutManager = layoutManager
+        adapter = TasquesAdapter(tasquesArrayList)
+        recyclerView.adapter = adapter
     }
 
     companion object {
@@ -56,5 +82,24 @@ class Tasques_Alumne : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun initializeData(){
+        // Lookup the recyclerview in activity layout
+        val rvTasques = binding.rvTasques as RecyclerView
+        // Initialize contacts
+        tasquesArrayList = Contact.createContactsList(20)
+        // Create adapter passing in the sample user data
+        val adapter = TasquesAdapter(tasquesArrayList)
+        // Attach the adapter to the recyclerview to populate items
+        rvTasques.adapter = adapter
+        // Set layout manager to position the items
+        rvTasques.layoutManager = LinearLayoutManager(context)
+        // That's all!
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
