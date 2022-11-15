@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/menuPerfil2"
-        android:title="Menu professor"
+        android:title="Perfil"
         android:icon="@drawable/perfil"/>
 
     <item android:id="@+id/menuTasques2"
