@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuPerfil2"
+        android:title="Perfil"
+        android:icon="@drawable/perfil"/>
+
+    <item android:id="@+id/menuTasques2"
+        android:title="Tasques"
+        android:icon="@drawable/tasques"/>
+
+    <item android:id="@+id/menuCalendari2"
+        android:title="Calendari"
+        android:icon="@drawable/calendar"/>
+
+    <item android:id="@+id/menuBotigaDeRecompenses2"
+        android:title="Botiga de recompenses"
+        android:icon="@drawable/botiga"/>
+
+    <item android:id="@+id/menuSettings2"
+        android:title="Configuració"
+        android:icon="@drawable/configuracio"/>
+
+    <item android:id="@+id/logOut2"
+        android:title="Tancar sessió"
+        android:icon="@drawable/logout"/>
+
+</menu>

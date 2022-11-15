@@ -20,7 +20,7 @@ class login_professor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        val binding = ActivityLoginProfessorBinding.inflate(layoutInflater)
+        binding = ActivityLoginProfessorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         auth = Firebase.auth
@@ -58,6 +58,8 @@ class login_professor : AppCompatActivity() {
                         "Login con éxito.",
                         Snackbar.LENGTH_SHORT
                     ).show()
+                    val intent = Intent(this, MainActivity2::class.java)
+                    startActivity(intent)
                 } else {
                     //Si les credencials son incorrectes o hi ha un error de connexió, mostra aquest missatge
                     Snackbar.make(
