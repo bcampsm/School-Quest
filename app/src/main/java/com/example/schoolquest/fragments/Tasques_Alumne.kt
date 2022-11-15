@@ -1,13 +1,11 @@
-package com.example.schoolquest
+package com.example.schoolquest.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-
+import com.example.schoolquest.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Tasques_Professor.newInstance] factory method to
+ * Use the [Tasques_Alumne.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Tasques_Professor : Fragment() {
+class Tasques_Alumne : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,14 +32,10 @@ class Tasques_Professor : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle? ): View {
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_tasques__professor, container, false)
-//        Futura implementacio de toolbar i FAB
-//        var toolbar: Toolbar = view.findViewById(R.id.toolbarTasquesProfessor)
-//        val activity = activity as AppCompatActivity?
-//        activity!!.setSupportActionBar(toolbar)
-        return view
+        return inflater.inflate(R.layout.fragment_tasques__alumne, container, false)
     }
 
     companion object {
@@ -51,12 +45,12 @@ class Tasques_Professor : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Tasques_Professor.
+         * @return A new instance of fragment Tasques_Alumne.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Tasques_Professor().apply {
+            Tasques_Alumne().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

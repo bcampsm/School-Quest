@@ -1,4 +1,4 @@
-package com.example.schoolquest
+package com.example.schoolquest.utils
 
 class Contact(val name: String, val isOnline: Boolean) {
 

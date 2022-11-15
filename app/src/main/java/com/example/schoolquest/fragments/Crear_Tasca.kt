@@ -1,10 +1,11 @@
-package com.example.schoolquest
+package com.example.schoolquest.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.schoolquest.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Tenda_Professor.newInstance] factory method to
+ * Use the [Crear_Tasca.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Tenda_Professor : Fragment() {
+class Crear_Tasca : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,7 @@ class Tenda_Professor : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tenda__professor, container, false)
+        return inflater.inflate(R.layout.fragment_crear__tasca, container, false)
     }
 
     companion object {
@@ -44,12 +45,12 @@ class Tenda_Professor : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Tenda_Professor.
+         * @return A new instance of fragment Crear_Tasca.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Tenda_Professor().apply {
+            Crear_Tasca().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

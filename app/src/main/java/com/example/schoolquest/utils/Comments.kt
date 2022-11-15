@@ -1,4 +1,4 @@
-package com.example.schoolquest
+package com.example.schoolquest.utils
 
 annotation class Comments()
 
