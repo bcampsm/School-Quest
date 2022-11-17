@@ -56,12 +56,15 @@ class Tasques_Alumne : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Inicialitza dades i recycler view
         initializeData()
         val layoutManager = LinearLayoutManager(context)
         recyclerView = binding.rvTasques
         recyclerView.layoutManager = layoutManager
         adapter = TasquesAdapter(tasquesArrayList)
         recyclerView.adapter = adapter
+
+        
     }
 
     companion object {
@@ -84,6 +87,9 @@ class Tasques_Alumne : Fragment() {
             }
     }
 
+    /**
+     * Inicialitza les dades ficticies del recicler view
+     */
     private fun initializeData(){
         // Lookup the recyclerview in activity layout
         val rvTasques = binding.rvTasques as RecyclerView

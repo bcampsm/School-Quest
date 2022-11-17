@@ -1,5 +1,6 @@
 package com.example.schoolquest.activities
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -14,6 +15,10 @@ import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        lateinit var miMainActivity: MainActivity
+    }
+
     private lateinit var toogle: ActionBarDrawerToggle
     private lateinit var binding: ActivityMainBinding
 
@@ -26,8 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        toogle = ActionBarDrawerToggle(this, binding.drawerLayout,
+        miMainActivity = this
+        toogle = ActionBarDrawerToggle(
+            this, binding.drawerLayout,
             R.string.openDrawer,
             R.string.CloseDrawer
         )
@@ -46,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.navigationView.setNavigationItemSelectedListener {
 
-            when(it.itemId){
+            when (it.itemId) {
 
                 R.id.menuPerfil -> fragment = Perfil_Alumne()
 
@@ -88,4 +94,12 @@ class MainActivity : AppCompatActivity() {
             }
             return super.onOptionsItemSelected(item)
         }
+        return super.onOptionsItemSelected(item)
     }
+
+    override fun onStart() {
+        super.onStart()
+        miMainActivity = this
+    }
+
+}
