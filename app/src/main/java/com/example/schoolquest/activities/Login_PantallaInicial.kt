@@ -24,7 +24,7 @@ class Login_PantallaInicial : AppCompatActivity() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CAMERA,)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.CAMERA), 101)
+                arrayOf(Manifest.permission.CAMERA), 200)
         }
 
         //Botó per obrir Login_Alumne.kt
