@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph"/>
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity4">
+    <activity
+        android:id="@+id/mainActivity4"
+        android:name="com.example.schoolquest.activities.MainActivity"
+        android:label="MainActivity" />
+    <fragment
+        android:id="@+id/tasques_Alumne"
+        android:name="com.example.schoolquest.fragments.Tasques_Alumne"
+        android:label="Tasques_Alumne" />
+    <fragment
+        android:id="@+id/perfil_Alumne"
+        android:name="com.example.schoolquest.fragments.Perfil_Alumne"
+        android:label="Perfil_Alumne" />
+    <action android:id="@+id/action_global_perfil_Alumne" app:destination="@id/perfil_Alumne" />
+    <action android:id="@+id/action_global_tasques_Alumne" app:destination="@id/tasques_Alumne" />
+    <fragment
+        android:id="@+id/calendari_alumne"
+        android:name="com.example.schoolquest.fragments.Calendari_alumne"
+        android:label="Calendari_alumne" />
+    <action android:id="@+id/action_global_calendari_alumne" app:destination="@id/calendari_alumne" />
+    <fragment
+        android:id="@+id/tenda_Alumnes"
+        android:name="com.example.schoolquest.fragments.Tenda_Alumnes"
+        android:label="Tenda_Alumnes" />
+    <action android:id="@+id/action_global_tenda_Alumnes" app:destination="@id/tenda_Alumnes" />
+    <fragment
+        android:id="@+id/configuracio2"
+        android:name="com.example.schoolquest.fragments.Configuracio"
+        android:label="Configuracio" /><action android:id="@+id/action_global_configuracio2" app:destination="@id/configuracio2"/>
+</navigation>

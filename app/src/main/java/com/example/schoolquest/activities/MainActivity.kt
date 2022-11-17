@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ActivityMainBinding
 import com.example.schoolquest.fragments.*
@@ -18,8 +19,8 @@ class MainActivity : AppCompatActivity() {
 
     //Navigation Component
     val fragmentManager = supportFragmentManager
-    val fragmentTransaction = supportFragmentManager.beginTransaction()
-    private lateinit var fragment: androidx.fragment.app.Fragment
+    //lateinit var fragment: androidx.fragment.app.Fragment
+    lateinit var fragment : Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         //Navigation Component
         fragment = Tasques_Alumne()
+        var fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainerView, fragment)
+        fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
         //
 
@@ -65,16 +68,19 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             binding.drawerLayout.openDrawer(GravityCompat.START)
+
+            //Navigation Component
+            val transaction = fragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainerView, Tasques_Alumne())
+            transaction.addToBackStack(null)
+            transaction.commit()
+            binding.drawerLayout.close()
+
                 true
             }
 
-        //Navigation Component
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentContainerView, Tasques_Alumne())
-        transaction.addToBackStack(null)
-        transaction.commit()
         }
-        //
+
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             if (toogle.onOptionsItemSelected(item)){
