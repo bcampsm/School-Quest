@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
             //Navigation Component
             val transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.fragmentContainerView, Tasques_Alumne())
+            transaction.replace(R.id.fragmentContainerView, fragment)
             transaction.addToBackStack(null)
             transaction.commit()
             binding.drawerLayout.close()
