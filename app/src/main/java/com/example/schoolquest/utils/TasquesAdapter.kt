@@ -1,12 +1,17 @@
 package com.example.schoolquest.utils
 
+import android.content.Intent
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
+import com.example.schoolquest.activities.MainActivity
+import com.example.schoolquest.fragments.Tasques_Alumne
 
 class TasquesAdapter (private val mContacts: List<Contact>) : RecyclerView.Adapter<TasquesAdapter.ViewHolder>() {
 
@@ -36,8 +41,14 @@ class TasquesAdapter (private val mContacts: List<Contact>) : RecyclerView.Adapt
         val textView = viewHolder.nameTextView
         textView.text = contact.name
         val button = viewHolder.messageButton
-        button.text = if (contact.isOnline) "Message" else "Offline"
+        button.text = if (contact.isOnline) "Enviar" else "Offline"
         button.isEnabled = contact.isOnline
+
+        // Open camera
+        viewHolder.messageButton.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
+        }
     }
 
     // Returns the total count of items in the list
