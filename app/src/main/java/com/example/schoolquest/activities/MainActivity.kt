@@ -94,12 +94,9 @@ class MainActivity : AppCompatActivity() {
             }
             return super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
-    }
-
     override fun onStart() {
         super.onStart()
         miMainActivity = this
     }
-
 }
+
