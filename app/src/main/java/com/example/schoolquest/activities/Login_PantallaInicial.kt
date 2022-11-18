@@ -21,10 +21,15 @@ class Login_PantallaInicial : AppCompatActivity() {
         val binding = ActivityLoginPantallaInicialBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA,)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.CAMERA), 200)
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA,
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA), 200
+            )
         }
 
         //Botó per obrir Login_Alumne.kt

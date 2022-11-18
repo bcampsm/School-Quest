@@ -18,7 +18,8 @@ class MainActivity2 : AppCompatActivity() {
         val binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toogle = ActionBarDrawerToggle(this, binding.drawerLayout2,
+        toogle = ActionBarDrawerToggle(
+            this, binding.drawerLayout2,
             R.string.openDrawer,
             R.string.CloseDrawer
         )
@@ -29,7 +30,7 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.navigationView2.setNavigationItemSelectedListener {
 
-            when(it.itemId){
+            when (it.itemId) {
 
                 R.id.menuPerfil2 -> {
 
@@ -83,7 +84,7 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toogle.onOptionsItemSelected(item)){
+        if (toogle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)

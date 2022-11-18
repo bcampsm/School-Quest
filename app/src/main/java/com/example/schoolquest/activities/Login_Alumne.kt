@@ -40,7 +40,7 @@ class Login_Alumne : AppCompatActivity() {
     }
 
     //Metode per verificar si l'usuari ha pogut iniciar sessió
-    private fun loginUsuari(email: String, password: String)  {
+    private fun loginUsuari(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {

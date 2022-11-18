@@ -18,7 +18,8 @@ import com.example.schoolquest.utils.TasquesAdapter
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-private lateinit var adapter : TasquesAdapter
+//Inicialitzar adaptador, recyclerView i array d'informació pel recycler
+private lateinit var adapter: TasquesAdapter
 private lateinit var recyclerView: RecyclerView
 private lateinit var tasquesArrayList: ArrayList<Contact>
 
@@ -41,14 +42,15 @@ class Tasques_Alumne : Fragment() {
     }
 
     private var _binding: FragmentTasquesAlumneBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+
+    // binding només es pot utilitzar entre onCreateVew i onDestroyView
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflar vista amb binding
         _binding = FragmentTasquesAlumneBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -64,7 +66,7 @@ class Tasques_Alumne : Fragment() {
         adapter = TasquesAdapter(tasquesArrayList)
         recyclerView.adapter = adapter
 
-        
+
     }
 
     companion object {
@@ -90,18 +92,17 @@ class Tasques_Alumne : Fragment() {
     /**
      * Inicialitza les dades ficticies del recicler view
      */
-    private fun initializeData(){
-        // Lookup the recyclerview in activity layout
+    private fun initializeData() {
+        // Trobar el recyclerView a l'activity layout
         val rvTasques = binding.rvTasques as RecyclerView
-        // Initialize contacts
+        // Inicialitzar contacts
         tasquesArrayList = Contact.createContactsList(20)
-        // Create adapter passing in the sample user data
+        // Crea l'adaptador passant les dades ficticies
         val adapter = TasquesAdapter(tasquesArrayList)
-        // Attach the adapter to the recyclerview to populate items
+        // Linkar l'adaptador amb el recyclerView
         rvTasques.adapter = adapter
-        // Set layout manager to position the items
+        // Posicionar els elements amb el LayoutManager
         rvTasques.layoutManager = LinearLayoutManager(context)
-        // That's all!
     }
 
     override fun onDestroyView() {
