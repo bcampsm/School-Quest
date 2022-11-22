@@ -31,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         miMainActivity = this
+
         toogle = ActionBarDrawerToggle(
             this, binding.drawerLayout,
             R.string.openDrawer,

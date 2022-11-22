@@ -31,4 +31,44 @@
         android:id="@+id/configuracio2"
         android:name="com.example.schoolquest.fragments.Configuracio"
         android:label="Configuracio" /><action android:id="@+id/action_global_configuracio2" app:destination="@id/configuracio2"/>
+    <fragment
+        android:id="@+id/calendari_professor"
+        android:name="com.example.schoolquest.fragments.Calendari_professor"
+        android:label="Calendari_professor" />
+    <action android:id="@+id/action_global_calendari_professor" app:destination="@id/calendari_professor" />
+    <fragment
+        android:id="@+id/perfil_Professor"
+        android:name="com.example.schoolquest.fragments.Perfil_Professor"
+        android:label="Perfil_Professor" />
+    <action android:id="@+id/action_global_perfil_Professor" app:destination="@id/perfil_Professor" />
+    <fragment
+        android:id="@+id/tasques_Professor"
+        android:name="com.example.schoolquest.fragments.Tasques_Professor"
+        android:label="Tasques_Professor" >
+        <action
+            android:id="@+id/action_tasques_Professor_to_crear_Tasca"
+            app:destination="@id/crear_Tasca" />
+    </fragment>
+    <action android:id="@+id/action_global_tasques_Professor" app:destination="@id/tasques_Professor" />
+    <fragment
+        android:id="@+id/tenda_Professor"
+        android:name="com.example.schoolquest.fragments.Tenda_Professor"
+        android:label="Tenda_Professor" >
+        <action
+            android:id="@+id/action_tenda_Professor_to_crear_Recompensa"
+            app:destination="@id/crear_Recompensa" />
+    </fragment>
+    <action android:id="@+id/action_global_tenda_Professor" app:destination="@id/tenda_Professor" />
+    <fragment
+        android:id="@+id/crear_Recompensa"
+        android:name="com.example.schoolquest.fragments.Crear_Recompensa"
+        android:label="Crear_Recompensa" />
+    <fragment
+        android:id="@+id/crear_Tasca"
+        android:name="com.example.schoolquest.fragments.Crear_Tasca"
+        android:label="Crear_Tasca" />
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.schoolquest.activities.MainActivity2"
+        android:label="MainActivity2" />
 </navigation>
