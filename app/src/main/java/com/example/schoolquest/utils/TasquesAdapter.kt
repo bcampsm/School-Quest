@@ -41,9 +41,9 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
 
     // Involves populating data into the item through holder
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        // Get the data model based on position
+        // Obtenir el model de dades
         val tasca: Tasques = mTasques[position]
-        // Set item views based on your views and data model
+        // Asignar les dades a cada element
         val nomTasca = viewHolder.nomTasca
         nomTasca.text = tasca.Nom
         val descTasca = viewHolder.descTasca
@@ -57,8 +57,8 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         val progress = viewHolder.progress
         progress.progress = tasca.progress
 
+        // Intent per obrir la camara
         val enviar = viewHolder.enviar
-        // Open camera
         viewHolder.enviar.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
