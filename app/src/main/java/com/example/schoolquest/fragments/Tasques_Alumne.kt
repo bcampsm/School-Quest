@@ -7,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.schoolquest.R
-import com.example.schoolquest.databinding.ActivityMainBinding
 import com.example.schoolquest.databinding.FragmentTasquesAlumneBinding
-import com.example.schoolquest.utils.Contact
 import com.example.schoolquest.utils.Tasques
 import com.example.schoolquest.utils.TasquesAdapter
 
