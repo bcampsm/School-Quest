@@ -29,11 +29,19 @@
 
                 <TextView
                     android:id="@+id/nivell"
-                    android:layout_width="wrap_content"
+                    android:layout_width="45dp"
                     android:layout_height="81dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/nivell"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/nivellCount"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="100"
                     android:textSize="32sp" />
 
                 <LinearLayout
@@ -80,9 +88,8 @@
                 android:layout_marginHorizontal="10dp"
                 android:background="?android:attr/listDivider" />
 
+<!--            Recycler view-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -90,12 +97,15 @@
                     android:id="@+id/rvTasques"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    tools:listitem="@layout/tasques_alumne_cards"
-                    tools:context=".fragments.Tasques_Alumne"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:context=".fragments.Tasques_Alumne"
+                    tools:listitem="@layout/tasques_alumne_cards" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
