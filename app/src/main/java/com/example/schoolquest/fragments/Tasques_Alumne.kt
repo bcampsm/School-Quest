@@ -11,6 +11,7 @@ import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ActivityMainBinding
 import com.example.schoolquest.databinding.FragmentTasquesAlumneBinding
 import com.example.schoolquest.utils.Contact
+import com.example.schoolquest.utils.Tasques
 import com.example.schoolquest.utils.TasquesAdapter
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
 //Inicialitzar adaptador, recyclerView i array d'informació pel recycler
 private lateinit var adapter: TasquesAdapter
 private lateinit var recyclerView: RecyclerView
-private lateinit var tasquesArrayList: ArrayList<Contact>
+private lateinit var tasquesArrayList: ArrayList<Tasques>
 
 /**
  * A simple [Fragment] subclass.
@@ -95,8 +96,8 @@ class Tasques_Alumne : Fragment() {
     private fun initializeData() {
         // Trobar el recyclerView a l'activity layout
         val rvTasques = binding.rvTasques as RecyclerView
-        // Inicialitzar contacts
-        tasquesArrayList = Contact.createContactsList(20)
+        // Inicialitzar tasques
+        tasquesArrayList = Tasques.crearTasca()
         // Crea l'adaptador passant les dades ficticies
         val adapter = TasquesAdapter(tasquesArrayList)
         // Linkar l'adaptador amb el recyclerView
