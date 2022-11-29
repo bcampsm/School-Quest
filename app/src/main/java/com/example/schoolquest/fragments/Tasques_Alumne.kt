@@ -63,8 +63,6 @@ class Tasques_Alumne : Fragment() {
         recyclerView.layoutManager = layoutManager
         adapter = TasquesAdapter(tasquesArrayList)
         recyclerView.adapter = adapter
-
-
     }
 
     companion object {

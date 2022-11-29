@@ -12,9 +12,11 @@ import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
 import com.example.schoolquest.activities.MainActivity
+import com.example.schoolquest.activities.MainActivity2
 import com.example.schoolquest.fragments.Tasques_Alumne
+import com.google.android.material.snackbar.Snackbar
 
-class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapter<TasquesAdapter.ViewHolder>() {
+class TasquesProfessorAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapter<TasquesProfessorAdapter.ViewHolder>() {
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
@@ -24,7 +26,7 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         val nomTasca = itemView.findViewById<TextView>(R.id.NomTasca)
         val descTasca = itemView.findViewById<TextView>(R.id.DescripcioTasca)
         val vencTasca = itemView.findViewById<TextView>(R.id.vencimentTasca)
-        val enviar = itemView.findViewById<Button>(R.id.ButtonCard)
+        val corregir = itemView.findViewById<Button>(R.id.ButtonCard)
         val XPbutton = itemView.findViewById<Button>(R.id.buttonXP)
         val SPbutton = itemView.findViewById<Button>(R.id.buttonSP)
         val progress = itemView.findViewById<ProgressBar>(R.id.progressBarTasquesCompletat)
@@ -34,7 +36,7 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         // Inflate the custom layout
-        val contactView = inflater.inflate(R.layout.tasques_alumne_cards, parent, false)
+        val contactView = inflater.inflate(R.layout.tasques_professor_cards, parent, false)
         // Return a new holder instance
         return ViewHolder(contactView)
     }
@@ -58,9 +60,14 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         progress.progress = tasca.progress
 
         // Intent per obrir la camara
-        viewHolder.enviar.setOnClickListener {
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
+        viewHolder.corregir.setOnClickListener {
+//            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//            startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
+            Snackbar.make(
+                it,
+                "Corregir",
+                Snackbar.LENGTH_SHORT
+            ).show()
         }
     }
 
