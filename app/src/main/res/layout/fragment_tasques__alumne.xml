@@ -111,8 +111,5 @@
 
         </LinearLayout>
 
-<!--        Abaix, quan un alumne vol pujar una tasca li apareixera un menu inferior,-->
-<!--        hem intentat implementar-ho (https://m2.material.io/components/sheets-bottom/android#using-bottom-sheets)-->
-<!--        pero es un menu i necessita programació.-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
