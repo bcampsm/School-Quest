@@ -14,6 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,10 +25,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutNovaTasca"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="296dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:hint="@string/nova_recompensa"
                 app:counterEnabled="true"
@@ -41,25 +42,40 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutSP"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="110dp"
+                android:layout_width="113dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:hint="@string/sp"
                 app:helperText="@string/school_points"
                 app:helperTextEnabled="false">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textFieldSP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center|start"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/buttonCrearTasca"
+                style="?attr/materialButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="150dp"
+                android:text="@string/crear"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/ic_baseline_add_24"
+                app:iconGravity="end" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
