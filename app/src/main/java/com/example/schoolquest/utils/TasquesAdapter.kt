@@ -5,31 +5,20 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
 import com.example.schoolquest.activities.MainActivity
-import com.example.schoolquest.fragments.Tasques_Alumne
+import com.example.schoolquest.databinding.TasquesAlumneCardsBinding
 
 class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapter<TasquesAdapter.ViewHolder>() {
 
-    // Provide a direct reference to each of the views within a data item
-    // Used to cache the views within the item layout for fast access
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Your holder should contain and initialize a member variable
-        // for any view that will be set as you render a row
-        val nomTasca = itemView.findViewById<TextView>(R.id.NomTasca)
-        val descTasca = itemView.findViewById<TextView>(R.id.DescripcioTasca)
-        val vencTasca = itemView.findViewById<TextView>(R.id.vencimentTasca)
-        val enviar = itemView.findViewById<Button>(R.id.ButtonCard)
-        val XPbutton = itemView.findViewById<Button>(R.id.buttonXP)
-        val SPbutton = itemView.findViewById<Button>(R.id.buttonSP)
-        val progress = itemView.findViewById<ProgressBar>(R.id.progressBarTasquesCompletat)
+    // Invocar el binding
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val binding = TasquesAlumneCardsBinding.bind(itemView)
     }
 
+    // Inflar layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
@@ -39,32 +28,27 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         return ViewHolder(contactView)
     }
 
-    // Involves populating data into the item through holder
+    // Afegir les dades a cada tarjeta del recyclerView
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        // Obtenir el model de dades
+        // Obtenir dades del model
         val tasca: Tasques = mTasques[position]
+
         // Asignar les dades a cada element
-        val nomTasca = viewHolder.nomTasca
-        nomTasca.text = tasca.Nom
-        val descTasca = viewHolder.descTasca
-        descTasca.text = tasca.Desc
-        val vencTasca = viewHolder.vencTasca
-        vencTasca.text = tasca.Venc
-        val XPbutton = viewHolder.XPbutton
-        XPbutton.text = tasca.XP
-        val SPbutton = viewHolder.SPbutton
-        SPbutton.text = tasca.SP
-        val progress = viewHolder.progress
-        progress.progress = tasca.progress
+        viewHolder.binding.NomTasca.text = tasca.Nom
+        viewHolder.binding.DescripcioTasca.text = tasca.Desc
+        viewHolder.binding.vencimentTasca.text = tasca.Venc
+        viewHolder.binding.buttonXP.text = tasca.XP
+        viewHolder.binding.buttonSP.text = tasca.SP
+        viewHolder.binding.progressBarTasquesCompletat.progress = tasca.progress
 
         // Intent per obrir la camara
-        viewHolder.enviar.setOnClickListener {
+        viewHolder.binding.ButtonCard.setOnClickListener() {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
         }
     }
 
-    // Returns the total count of items in the list
+    // Returna la quantitat d'elements al recyclerView
     override fun getItemCount(): Int {
         return mTasques.size
     }
