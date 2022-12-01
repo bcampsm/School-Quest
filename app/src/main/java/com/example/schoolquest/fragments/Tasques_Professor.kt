@@ -4,16 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.schoolquest.R
-
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.schoolquest.databinding.FragmentTasquesProfessorBinding
+import com.example.schoolquest.utils.Tasques
+import com.example.schoolquest.utils.TasquesProfessorAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+//Inicialitzar adaptador, recyclerView i array d'informació pel recycler
+private lateinit var adapter: TasquesProfessorAdapter
+private lateinit var recyclerView: RecyclerView
+private lateinit var tasquesArrayList: ArrayList<Tasques>
 
 /**
  * A simple [Fragment] subclass.
@@ -33,16 +39,30 @@ class Tasques_Professor : Fragment() {
         }
     }
 
+    private var _binding: FragmentTasquesProfessorBinding? = null
+
+    // binding només es pot utilitzar entre onCreateVew i onDestroyView
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle? ): View {
-        // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_tasques__professor, container, false)
-//        Futura implementacio de toolbar i FAB
-//        var toolbar: Toolbar = view.findViewById(R.id.toolbarTasquesProfessor)
-//        val activity = activity as AppCompatActivity?
-//        activity!!.setSupportActionBar(toolbar)
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflar vista amb binding
+        _binding = FragmentTasquesProfessorBinding.inflate(inflater, container, false)
+        val view = binding.root
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //Inicialitza dades i recycler view
+        initializeData()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = binding.rvTasquesProfessor
+        recyclerView.layoutManager = layoutManager
+        adapter = TasquesProfessorAdapter(tasquesArrayList)
+        recyclerView.adapter = adapter
     }
 
     companion object {
@@ -63,5 +83,26 @@ class Tasques_Professor : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    /**
+     * Inicialitza les dades ficticies del recicler view
+     */
+    private fun initializeData() {
+        // Trobar el recyclerView a l'activity layout
+        val rvTasques = binding.rvTasquesProfessor as RecyclerView
+        // Inicialitzar tasques
+        tasquesArrayList = Tasques.crearTasca()
+        // Crea l'adaptador passant les dades ficticies
+        val adapter = TasquesProfessorAdapter(tasquesArrayList)
+        // Linkar l'adaptador amb el recyclerView
+        rvTasques.adapter = adapter
+        // Posicionar els elements amb el LayoutManager
+        rvTasques.layoutManager = LinearLayoutManager(context)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

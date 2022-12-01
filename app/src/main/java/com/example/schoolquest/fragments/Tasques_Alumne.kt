@@ -39,9 +39,8 @@ class Tasques_Alumne : Fragment() {
         }
     }
 
-    private var _binding: FragmentTasquesAlumneBinding? = null
-
     // binding només es pot utilitzar entre onCreateVew i onDestroyView
+    private var _binding: FragmentTasquesAlumneBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -63,8 +62,6 @@ class Tasques_Alumne : Fragment() {
         recyclerView.layoutManager = layoutManager
         adapter = TasquesAdapter(tasquesArrayList)
         recyclerView.adapter = adapter
-
-
     }
 
     companion object {

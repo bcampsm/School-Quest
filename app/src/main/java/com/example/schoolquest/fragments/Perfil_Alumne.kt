@@ -5,12 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
+import com.example.schoolquest.databinding.FragmentPerfilAlumneBinding
+import com.example.schoolquest.databinding.FragmentTasquesAlumneBinding
+import com.example.schoolquest.utils.Exits
+import com.example.schoolquest.utils.ExitsAdapter
+import com.example.schoolquest.utils.Tasques
+import com.example.schoolquest.utils.TasquesAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+//Inicialitzar adaptador, recyclerView i array d'informació pel recycler
+private lateinit var adapter: ExitsAdapter
+private lateinit var recyclerView: RecyclerView
+private lateinit var exitsArrayList: ArrayList<Exits>
 
 /**
  * A simple [Fragment] subclass.
@@ -30,12 +43,29 @@ class Perfil_Alumne : Fragment() {
         }
     }
 
+    // binding només es pot utilitzar entre onCreateVew i onDestroyView
+    private var _binding: FragmentPerfilAlumneBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil__alumne, container, false)
+        // Inflar vista amb binding
+        _binding = FragmentPerfilAlumneBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //Inicialitza dades i recycler view
+        initializeData()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = binding.rvExits
+        recyclerView.layoutManager = layoutManager
+        adapter = ExitsAdapter(exitsArrayList)
+        recyclerView.adapter = adapter
     }
 
     companion object {
@@ -56,5 +86,26 @@ class Perfil_Alumne : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    /**
+     * Inicialitza les dades ficticies del recicler view
+     */
+    private fun initializeData() {
+        // Trobar el recyclerView a l'activity layout
+        val rvExits = binding.rvExits as RecyclerView
+        // Inicialitzar tasques
+        exitsArrayList = Exits.crearExits()
+        // Crea l'adaptador passant les dades ficticies
+        val adapter = ExitsAdapter(exitsArrayList)
+        // Linkar l'adaptador amb el recyclerView
+        rvExits.adapter = adapter
+        // Posicionar els elements amb el LayoutManager
+        rvExits.layoutManager = LinearLayoutManager(context)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

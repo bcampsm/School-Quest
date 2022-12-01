@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
+    android:layout_marginTop="5dp">
+
+    <Button
+        android:id="@+id/exitIcon"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:clickable="false"
+        app:icon="@android:drawable/star_big_on" />
+
+    <TextView
+        android:id="@+id/nomExit"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="11pt"/>
+
+
+</LinearLayout>

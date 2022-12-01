@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:outlineAmbientShadowColor="#C4C4C4"
-    tools:context=".Tasques_Alumne">
+    tools:context="fragments.Tasques_Alumne">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -111,8 +111,5 @@
 
         </LinearLayout>
 
-<!--        Abaix, quan un alumne vol pujar una tasca li apareixera un menu inferior,-->
-<!--        hem intentat implementar-ho (https://m2.material.io/components/sheets-bottom/android#using-bottom-sheets)-->
-<!--        pero es un menu i necessita programació.-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
