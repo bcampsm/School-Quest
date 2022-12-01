@@ -48,5 +48,6 @@
     <string name="CloseDrawer">CloseDrawer</string>
     <string name="alumnes_que_han_completat_la_tasca">Alumnes que han completat la tasca</string>
     <string name="enviar">Enviar</string>
+    <string name="crear">Crear</string>
     <string name="corregir">corregir</string>
 </resources>
