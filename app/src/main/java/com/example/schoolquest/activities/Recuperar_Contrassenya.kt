@@ -9,8 +9,6 @@ import com.google.firebase.ktx.Firebase
 
 class Recuperar_Contrassenya : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRecuperarContrassenyaBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)

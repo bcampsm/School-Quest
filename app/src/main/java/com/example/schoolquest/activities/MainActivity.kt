@@ -1,6 +1,5 @@
 package com.example.schoolquest.activities
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -20,10 +19,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var toogle: ActionBarDrawerToggle
-    private lateinit var binding: ActivityMainBinding
 
     //Navigation Component
-    val fragmentManager = supportFragmentManager
+    private val fragmentManager = supportFragmentManager
     lateinit var fragment: Fragment
     //
 
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         //Navigation Component
         fragment = Tasques_Alumne()// A la variable "fragment" la igualem al fragment que primerament volem mostrar
-        var fragmentTransaction = supportFragmentManager.beginTransaction()
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainerView, fragment)//fem un remplaç del fragment actual que es mostra al fragment container view, per el que hem associat previament a la variable fragment.
         fragmentTransaction.addToBackStack(null)//afegim els fragments a darrere
         fragmentTransaction.commit()

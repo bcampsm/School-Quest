@@ -33,7 +33,7 @@ class Login_Alumne : AppCompatActivity() {
                 binding.textFieldLoginAlumnePassword.text.toString()
 
             //Crida a metode per verificar credencials
-            if (Common.checkCredencials(email, password, this) == true) {
+            if (Common.checkCredencials(email, password, this)) {
 //                loginUsuari(email, password)
                 /*
                 Saltar-se el metode de login amb firebase, utilitzat quan es fan tests amb l'emulador
