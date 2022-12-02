@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
@@ -61,7 +62,7 @@ class Perfil_Alumne : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //Inicialitza dades i recycler view
         initializeData()
-        val layoutManager = LinearLayoutManager(context)
+        val layoutManager = GridLayoutManager(context, 3)
         recyclerView = binding.rvExits
         recyclerView.layoutManager = layoutManager
         adapter = ExitsAdapter(exitsArrayList)
@@ -101,7 +102,7 @@ class Perfil_Alumne : Fragment() {
         // Linkar l'adaptador amb el recyclerView
         rvExits.adapter = adapter
         // Posicionar els elements amb el LayoutManager
-        rvExits.layoutManager = LinearLayoutManager(context)
+        rvExits.layoutManager = GridLayoutManager(context, 3)
     }
 
     override fun onDestroyView() {
