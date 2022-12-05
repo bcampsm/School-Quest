@@ -5,12 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
+import com.example.schoolquest.databinding.FragmentPerfilAlumneBinding
+import com.example.schoolquest.databinding.FragmentTendaAlumnesBinding
+import com.example.schoolquest.utils.Exits
+import com.example.schoolquest.utils.ExitsAdapter
+import com.example.schoolquest.utils.Recompenses
+import com.example.schoolquest.utils.TendaAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+//Inicialitzar adaptador, recyclerView i array d'informació pel recycler
+private lateinit var adapter: TendaAdapter
+private lateinit var recyclerView: RecyclerView
+private lateinit var recompensesArrayList: ArrayList<Recompenses>
 
 /**
  * A simple [Fragment] subclass.
@@ -30,12 +43,28 @@ class Tenda_Alumnes : Fragment() {
         }
     }
 
+    // binding només es pot utilitzar entre onCreateVew i onDestroyView
+    private var _binding: FragmentTendaAlumnesBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tenda__alumnes, container, false)
+        _binding = FragmentTendaAlumnesBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //Inicialitza dades i recycler view
+        initializeData()
+        val layoutManager = GridLayoutManager(context, 2)
+        recyclerView = binding.rvRecompenses
+        recyclerView.layoutManager = layoutManager
+        adapter = TendaAdapter(recompensesArrayList)
+        recyclerView.adapter = adapter
     }
 
     companion object {
@@ -56,5 +85,26 @@ class Tenda_Alumnes : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    /**
+     * Inicialitza les dades ficticies del recicler view
+     */
+    private fun initializeData() {
+        // Trobar el recyclerView a l'activity layout
+        val rvRecompenses = binding.rvRecompenses
+        // Inicialitzar tasques
+        recompensesArrayList = Recompenses.crearRecompenses()
+        // Crea l'adaptador passant les dades ficticies
+        val adapter = TendaAdapter(recompensesArrayList)
+        // Linkar l'adaptador amb el recyclerView
+        rvRecompenses.adapter = adapter
+        // Posicionar els elements amb el LayoutManager
+        rvRecompenses.layoutManager = GridLayoutManager(context, 2)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
