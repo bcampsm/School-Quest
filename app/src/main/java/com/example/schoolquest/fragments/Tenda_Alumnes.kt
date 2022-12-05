@@ -7,11 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.schoolquest.R
-import com.example.schoolquest.databinding.FragmentPerfilAlumneBinding
 import com.example.schoolquest.databinding.FragmentTendaAlumnesBinding
-import com.example.schoolquest.utils.Exits
-import com.example.schoolquest.utils.ExitsAdapter
 import com.example.schoolquest.utils.Recompenses
 import com.example.schoolquest.utils.TendaAdapter
 
