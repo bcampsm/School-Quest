@@ -24,7 +24,6 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private lateinit var toogle: ActionBarDrawerToggle
-    private lateinit var binding: ActivityMain2Binding
 
     //Navigation Component
     val fragmentManager = supportFragmentManager

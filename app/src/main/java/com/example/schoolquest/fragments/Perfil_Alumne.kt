@@ -5,15 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.schoolquest.R
 import com.example.schoolquest.databinding.FragmentPerfilAlumneBinding
-import com.example.schoolquest.databinding.FragmentTasquesAlumneBinding
 import com.example.schoolquest.utils.Exits
 import com.example.schoolquest.utils.ExitsAdapter
-import com.example.schoolquest.utils.Tasques
-import com.example.schoolquest.utils.TasquesAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,18 +46,17 @@ class Perfil_Alumne : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflar vista amb binding
         _binding = FragmentPerfilAlumneBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Inicialitza dades i recycler view
         initializeData()
-        val layoutManager = LinearLayoutManager(context)
+        val layoutManager = GridLayoutManager(context, 3)
         recyclerView = binding.rvExits
         recyclerView.layoutManager = layoutManager
         adapter = ExitsAdapter(exitsArrayList)
@@ -93,7 +88,7 @@ class Perfil_Alumne : Fragment() {
      */
     private fun initializeData() {
         // Trobar el recyclerView a l'activity layout
-        val rvExits = binding.rvExits as RecyclerView
+        val rvExits = binding.rvExits
         // Inicialitzar tasques
         exitsArrayList = Exits.crearExits()
         // Crea l'adaptador passant les dades ficticies
@@ -101,7 +96,7 @@ class Perfil_Alumne : Fragment() {
         // Linkar l'adaptador amb el recyclerView
         rvExits.adapter = adapter
         // Posicionar els elements amb el LayoutManager
-        rvExits.layoutManager = LinearLayoutManager(context)
+        rvExits.layoutManager = GridLayoutManager(context, 3)
     }
 
     override fun onDestroyView() {

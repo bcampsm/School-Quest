@@ -33,14 +33,14 @@ class Login_Alumne : AppCompatActivity() {
                 binding.textFieldLoginAlumnePassword.text.toString()
 
             //Crida a metode per verificar credencials
-            if (Common.checkCredencials(email, password, this) == true) {
-//                loginUsuari(email, password)
+            if (Common.checkCredencials(email, password, this)) {
+                loginUsuari(email, password)
                 /*
                 Saltar-se el metode de login amb firebase, utilitzat quan es fan tests amb l'emulador
                 ja que tarda molt en fer connexions a la base de dades (problema global amb Android Studio).
                  */
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, MainActivity::class.java)
+//                startActivity(intent)
             }
         }
     }

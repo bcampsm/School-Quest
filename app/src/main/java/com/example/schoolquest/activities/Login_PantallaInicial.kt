@@ -12,8 +12,6 @@ import com.example.schoolquest.databinding.ActivityLoginPantallaInicialBinding
 
 class Login_PantallaInicial : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginPantallaInicialBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(Theme_SchoolQuest)
         supportActionBar?.hide()
@@ -21,6 +19,7 @@ class Login_PantallaInicial : AppCompatActivity() {
         val binding = ActivityLoginPantallaInicialBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Verificacio de permissos per utilitzar la camara
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.CAMERA,

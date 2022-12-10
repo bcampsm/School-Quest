@@ -46,11 +46,10 @@ class Tasques_Alumne : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflar vista amb binding
         _binding = FragmentTasquesAlumneBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -89,7 +88,7 @@ class Tasques_Alumne : Fragment() {
      */
     private fun initializeData() {
         // Trobar el recyclerView a l'activity layout
-        val rvTasques = binding.rvTasques as RecyclerView
+        val rvTasques = binding.rvTasques
         // Inicialitzar tasques
         tasquesArrayList = Tasques.crearTasca()
         // Crea l'adaptador passant les dades ficticies
