@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity4">
+    app:startDestination="@id/tasques_Alumne">
     <activity
         android:id="@+id/mainActivity4"
         android:name="com.example.schoolquest.activities.MainActivity"
@@ -71,4 +72,9 @@
         android:id="@+id/mainActivity2"
         android:name="com.example.schoolquest.activities.MainActivity2"
         android:label="MainActivity2" />
+    <activity
+        android:id="@+id/login_PantallaInicial"
+        android:name="com.example.schoolquest.activities.Login_PantallaInicial"
+        android:label="activity_login_pantalla_inicial"
+        tools:layout="@layout/activity_login_pantalla_inicial" />
 </navigation>
