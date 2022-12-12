@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         lateinit var miMainActivity: MainActivity
     }
 
+    //Binding
+    lateinit var binding: ActivityMainBinding
+    //
+
     private lateinit var toogle: ActionBarDrawerToggle
 
     //Navigation Component
@@ -49,15 +53,8 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-//        //Navigation Component Antiguo
-//        fragment = Tasques_Alumne()// A la variable "fragment" la igualem al fragment que primerament volem mostrar
-//        var fragmentTransaction = supportFragmentManager.beginTransaction()
-//        fragmentTransaction.replace(R.id.fragmentContainerView, fragment)//fem un remplaç del fragment actual que es mostra al fragment container view, per el que hem associat previament a la variable fragment.
-//        fragmentTransaction.addToBackStack(null)//afegim els fragments a darrere
-//        fragmentTransaction.commit()
-//        //
-
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
 
         //Listener del menu lateral
@@ -66,23 +63,28 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
 
                 R.id.menuPerfil -> {
-                    Navigation.findNavController(binding.fragmentContainerView).navigate(R.id.action_global_perfil_Alumne)
+                    Navigation.findNavController(binding.fragmentContainerView)
+                        .navigate(R.id.action_global_perfil_Alumne)
                 }
 
                 R.id.menuTasques -> {
-                    Navigation.findNavController(binding.fragmentContainerView).navigate(R.id.action_global_tasques_Alumne)
+                    Navigation.findNavController(binding.fragmentContainerView)
+                        .navigate(R.id.action_global_tasques_Alumne)
                 }
 
                 R.id.menuCalendari -> {
-                    Navigation.findNavController(binding.fragmentContainerView).navigate(R.id.action_global_calendari_alumne)
+                    Navigation.findNavController(binding.fragmentContainerView)
+                        .navigate(R.id.action_global_calendari_alumne)
                 }
 
                 R.id.menuBotigaDeRecompenses -> {
-                    Navigation.findNavController(binding.fragmentContainerView).navigate(R.id.action_global_tenda_Alumnes)
+                    Navigation.findNavController(binding.fragmentContainerView)
+                        .navigate(R.id.action_global_tenda_Alumnes)
                 }
 
                 R.id.menuSettings -> {
-                    Navigation.findNavController(binding.fragmentContainerView).navigate(R.id.action_global_configuracio2)
+                    Navigation.findNavController(binding.fragmentContainerView)
+                        .navigate(R.id.action_global_configuracio2)
                 }
 
                 R.id.logOut -> {
@@ -91,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             binding.drawerLayout.openDrawer(GravityCompat.START)
+
 //            binding.navigationView.postDelayed(
 //                {
 //                    val transaction = fragmentManager.beginTransaction()
@@ -105,6 +108,11 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+        binding.navigationView.postDelayed({
+            Navigation.findNavController(binding.fragmentContainerView)
+                .navigate(R.id.action_global_tasques_Alumne)
+        }, 1)
 
     }
 

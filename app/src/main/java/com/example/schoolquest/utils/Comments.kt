@@ -53,3 +53,28 @@ annotation class Comments()
             .create()
         dialog.show()
     }*/
+
+//Antigua navegación
+/*
+            binding.navigationView2.postDelayed(
+                {
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(R.id.fragmentContainerView, fragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                }, 275
+            )
+
+ */
+
+//Navigation Component antiguo
+/*
+fragment = Tasques_Professor()// A la variable "fragment" la igualem al fragment que primerament volem mostrar
+var fragmentTransaction = supportFragmentManager.beginTransaction()
+fragmentTransaction.replace(R.id.fragmentContainerView, fragment)//fem un remplaç del fragment actual que es mostra al fragment container view, per el que hem associat previament a la variable fragment.
+fragmentTransaction.addToBackStack(null)//afegim els fragments a darrere
+fragmentTransaction.commit()
+
+ */
+//
+

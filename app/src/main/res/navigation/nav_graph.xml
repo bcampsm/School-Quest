@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/tasques_Alumne">
+    app:startDestination="@id/fragmentInicial">
     <activity
         android:id="@+id/mainActivity4"
         android:name="com.example.schoolquest.activities.MainActivity"
@@ -77,4 +77,10 @@
         android:name="com.example.schoolquest.activities.Login_PantallaInicial"
         android:label="activity_login_pantalla_inicial"
         tools:layout="@layout/activity_login_pantalla_inicial" />
+    <fragment
+        android:id="@+id/fragmentInicial"
+        android:name="com.example.schoolquest.fragments.FragmentInicial"
+        android:label="fragment_inicial"
+        tools:layout="@layout/fragment_inicial" />
+    <action android:id="@+id/action_global_fragmentInicial" app:destination="@id/fragmentInicial" />
 </navigation>
