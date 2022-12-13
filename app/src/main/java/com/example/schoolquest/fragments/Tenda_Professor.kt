@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.schoolquest.R
 import com.example.schoolquest.databinding.FragmentTendaProfessorBinding
 import com.example.schoolquest.utils.Recompenses
 import com.example.schoolquest.utils.TendaProfessorAdapter
@@ -65,11 +67,8 @@ class Tenda_Professor : Fragment() {
 
         // Intent per obrir pantalla de creacio de recompenses
         binding.AfegirRecompensaFAB.setOnClickListener() {
-            Snackbar.make(
-                it,
-                "Afegir nova recompensa",
-                Snackbar.LENGTH_SHORT
-            ).show()
+            Navigation.findNavController(it)
+                .navigate(R.id.action_tenda_Professor_to_crear_Recompensa)
         }
     }
 

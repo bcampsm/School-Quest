@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_tasques_Professor_to_crear_Tasca"
             app:destination="@id/crear_Tasca" />
+        <action
+            android:id="@+id/action_tasques_Professor_to_corregirTasca"
+            app:destination="@id/corregirTasca" />
     </fragment>
     <action android:id="@+id/action_global_tasques_Professor" app:destination="@id/tasques_Professor" />
     <fragment
@@ -83,4 +86,9 @@
         android:label="fragment_inicial"
         tools:layout="@layout/fragment_inicial" />
     <action android:id="@+id/action_global_fragmentInicial" app:destination="@id/fragmentInicial" />
+    <fragment
+        android:id="@+id/corregirTasca"
+        android:name="com.example.schoolquest.fragments.CorregirTasca"
+        android:label="fragment_corregir_tasca"
+        tools:layout="@layout/fragment_corregir_tasca" />
 </navigation>

@@ -1,17 +1,21 @@
 package com.example.schoolquest.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
-import com.example.schoolquest.databinding.FragmentTasquesProfessorBinding
+import com.example.schoolquest.databinding.CorregirTascaCardsBinding
+import com.example.schoolquest.databinding.FragmentCorregirTascaBinding
+import com.example.schoolquest.databinding.FragmentTasquesAlumneBinding
+import com.example.schoolquest.utils.Correccions
+import com.example.schoolquest.utils.CorregirAdapter
 import com.example.schoolquest.utils.Tasques
-import com.example.schoolquest.utils.TasquesProfessorAdapter
+import com.example.schoolquest.utils.TasquesAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,16 +23,16 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 //Inicialitzar adaptador, recyclerView i array d'informació pel recycler
-private lateinit var adapter: TasquesProfessorAdapter
+private lateinit var adapter: CorregirAdapter
 private lateinit var recyclerView: RecyclerView
-private lateinit var tasquesArrayList: ArrayList<Tasques>
+private lateinit var correccionsArrayList: ArrayList<Correccions>
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Tasques_Professor.newInstance] factory method to
+ * Use the [CorregirTasca.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Tasques_Professor : Fragment() {
+class CorregirTasca : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,11 +45,8 @@ class Tasques_Professor : Fragment() {
         }
     }
 
-
-
-    private var _binding: FragmentTasquesProfessorBinding? = null
-
     // binding només es pot utilitzar entre onCreateVew i onDestroyView
+    private var _binding: FragmentCorregirTascaBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -53,7 +54,7 @@ class Tasques_Professor : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflar vista amb binding
-        _binding = FragmentTasquesProfessorBinding.inflate(inflater, container, false)
+        _binding = FragmentCorregirTascaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -61,17 +62,11 @@ class Tasques_Professor : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //Inicialitza dades i recycler view
         initializeData()
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView = binding.rvTasquesProfessor
+        val layoutManager = GridLayoutManager(context, 3)
+        recyclerView = binding.rvCorreccions
         recyclerView.layoutManager = layoutManager
-        adapter = TasquesProfessorAdapter(tasquesArrayList)
+        adapter = CorregirAdapter(correccionsArrayList)
         recyclerView.adapter = adapter
-
-        // Intent per obrir pantalla de creacio de tasques
-        binding.AfegirTascaFAB.setOnClickListener() {
-            Navigation.findNavController(it)
-                .navigate(R.id.action_tasques_Professor_to_crear_Tasca)
-        }
     }
 
     companion object {
@@ -81,12 +76,12 @@ class Tasques_Professor : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Tasques_Professor.
+         * @return A new instance of fragment CorregirTasca.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Tasques_Professor().apply {
+            CorregirTasca().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -99,15 +94,15 @@ class Tasques_Professor : Fragment() {
      */
     private fun initializeData() {
         // Trobar el recyclerView a l'activity layout
-        val rvTasques = binding.rvTasquesProfessor
+        val rvCorreccions = binding.rvCorreccions
         // Inicialitzar tasques
-        tasquesArrayList = Tasques.crearTasca()
+        correccionsArrayList = Correccions.crearCorreccions()
         // Crea l'adaptador passant les dades ficticies
-        val adapter = TasquesProfessorAdapter(tasquesArrayList)
+        val adapter = CorregirAdapter(correccionsArrayList)
         // Linkar l'adaptador amb el recyclerView
-        rvTasques.adapter = adapter
+        rvCorreccions.adapter = adapter
         // Posicionar els elements amb el LayoutManager
-        rvTasques.layoutManager = LinearLayoutManager(context)
+        rvCorreccions.layoutManager = GridLayoutManager(context, 3)
     }
 
     override fun onDestroyView() {

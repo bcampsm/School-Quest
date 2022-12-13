@@ -3,6 +3,7 @@ package com.example.schoolquest.utils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.TasquesProfessorCardsBinding
@@ -40,12 +41,12 @@ class TasquesProfessorAdapter (private val mTasques: List<Tasques>) : RecyclerVi
 
         // Intent per obrir el fragment de correccio (proximament)
         viewHolder.binding.ButtonCard.setOnClickListener() {
-            Snackbar.make(
-                it,
-                "Corregir",
-                Snackbar.LENGTH_SHORT
-            ).show()
+
+            Navigation.findNavController(it)
+                .navigate(R.id.action_tasques_Professor_to_corregirTasca)
         }
+
+
     }
 
     // Returna la quantitat d'elements al recyclerView
