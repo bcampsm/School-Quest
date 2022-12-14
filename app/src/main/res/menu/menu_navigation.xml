@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/menuPerfil"
-        android:title="Perfil"
-        android:icon="@drawable/perfil"/>
+    <group
+        android:id="@+id/groupMenu1"
+        android:checkableBehavior="single">
 
-    <item android:id="@+id/menuTasques"
-        android:title="Tasques"
-        android:icon="@drawable/tasques"/>
+        <item
+            android:id="@+id/menuPerfil"
+            android:title="@string/perfil"
+            android:icon="@drawable/perfil"/>
 
-    <item android:id="@+id/menuCalendari"
-        android:title="Calendari"
-        android:icon="@drawable/calendar"/>
+        <item android:id="@+id/menuTasques"
+            android:title="@string/tasques"
+            android:icon="@drawable/tasques"/>
 
-    <item android:id="@+id/menuBotigaDeRecompenses"
-        android:title="Botiga de recompenses"
-        android:icon="@drawable/botiga"/>
+        <item android:id="@+id/menuCalendari"
+            android:title="@string/calendari"
+            android:icon="@drawable/calendar"/>
 
-    <item android:id="@+id/menuSettings"
-        android:title="Configuració"
-        android:icon="@drawable/configuracio"/>
+        <item android:id="@+id/menuBotigaDeRecompenses"
+            android:title="@string/botiga_de_recompenses"
+            android:icon="@drawable/botiga"/>
+
+        <item android:id="@+id/menuSettings"
+            android:title="@string/configuraci"
+            android:icon="@drawable/configuracio"/>
+
+    </group>
 
     <item android:id="@+id/logOut"
-        android:title="Tancar sessió"
-        android:icon="@drawable/logout"/>
+        android:title="@string/tancar_sessi"
+        android:icon="@drawable/logout"
+        />
 
 </menu>
