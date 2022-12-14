@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SchoolQuest</string>
+    <string name="app_name" translatable="false">SchoolQuest</string>
     <string name="grup_a">GRUP A</string>
     <string name="grup_b">GRUP B</string>
     <string name="grup_c">GRUP C</string>
@@ -29,26 +29,32 @@
     <string name="nom_de_la_tasca">Nom de la tasca</string>
     <string name="descripcio">Descripció</string>
     <string name="data">Data</string>
-    <string name="xp">XP</string>
+    <string name="xp" translatable="false">XP</string>
     <string name="experiencia">Experiéncia</string>
-    <string name="sp">SP</string>
-    <string name="school_points">School Points</string>
+    <string name="sp" translatable="false">SP</string>
+    <string name="school_points" translatable="false">School Points</string>
     <string name="nova_recompensa">Nova recompensa</string>
     <string name="nom_de_la_recompensa">Nom de la recompensa</string>
     <string name="subtasca">Subtasca</string>
     <string name="notificacions">Notificacions</string>
     <string name="idioma">Idioma</string>
     <string name="tanca_sesio">Tanca sessió</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="logo_schoolquest">Logo schoolquest</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="logo_schoolquest" translatable="false">Logo schoolquest</string>
     <string name="catala">Català</string>
-    <string name="english">English</string>
-    <string name="espanol">Español</string>
-    <string name="openDrawer">openDrawer</string>
-    <string name="CloseDrawer">CloseDrawer</string>
+    <string name="english">Àngles</string>
+    <string name="espanol">Espanyol</string>
+    <string name="openDrawer" translatable="false">openDrawer</string>
+    <string name="CloseDrawer" translatable="false">CloseDrawer</string>
     <string name="alumnes_que_han_completat_la_tasca">Alumnes que han completat la tasca</string>
     <string name="enviar">Enviar</string>
     <string name="crear">Crear</string>
     <string name="corregir">corregir</string>
     <string name="recompensa">Recompensa</string>
+    <string name="perfil">Perfil</string>
+    <string name="tasques">Tasques</string>
+    <string name="calendari">Calendari</string>
+    <string name="botiga_de_recompenses">Botiga de recompenses</string>
+    <string name="configuraci">Configuració</string>
+    <string name="tancar_sessi">Tancar sessió</string>
 </resources>
