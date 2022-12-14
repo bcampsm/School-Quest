@@ -6,16 +6,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.NavGraph
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ActivityMain2Binding
-import com.example.schoolquest.fragments.*
-import com.google.android.material.snackbar.Snackbar
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -28,10 +23,7 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var toogle: ActionBarDrawerToggle
 
     //Navigation Component
-    val fragmentManager = supportFragmentManager
-    lateinit var navHostFragment: NavHostFragment
-    lateinit var navController: NavController
-    private lateinit var navGraph: NavGraph
+    private lateinit var navController: NavController
     //
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,6 +117,6 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        MainActivity2.miMainActivity2 = this
+        miMainActivity2 = this
     }
 }

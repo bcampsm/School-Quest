@@ -1,21 +1,16 @@
 package com.example.schoolquest.activities
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ActivityMainBinding
-import com.example.schoolquest.fragments.*
-import com.google.android.material.snackbar.Snackbar
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,10 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var toogle: ActionBarDrawerToggle
 
     //Navigation Component
-    private val fragmentManager = supportFragmentManager
-    lateinit var fragment: Fragment
-    lateinit var navHostFragment: NavHostFragment
-    lateinit var navController: NavController
+    private lateinit var navController: NavController
     //
 
     override fun onCreate(savedInstanceState: Bundle?) {//onCreate

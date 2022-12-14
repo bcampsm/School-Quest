@@ -75,6 +75,12 @@ fragmentTransaction.replace(R.id.fragmentContainerView, fragment)//fem un rempla
 fragmentTransaction.addToBackStack(null)//afegim els fragments a darrere
 fragmentTransaction.commit()
 
+//Navigation Component
+    val fragmentManager = supportFragmentManager
+    lateinit var navHostFragment: NavHostFragment
+    lateinit var navController: NavController
+    private lateinit var navGraph: NavGraph
+    //
  */
 //
 
