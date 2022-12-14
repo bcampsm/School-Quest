@@ -1,16 +1,11 @@
 package com.example.schoolquest.utils
 
-import android.content.Intent
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
-import com.example.schoolquest.activities.MainActivity
 import com.example.schoolquest.databinding.CorregirTascaCardsBinding
-import com.example.schoolquest.databinding.TasquesAlumneCardsBinding
 
 class CorregirAdapter (private val mCorrecccions: List<Correccions>) : RecyclerView.Adapter<CorregirAdapter.ViewHolder>() {
 

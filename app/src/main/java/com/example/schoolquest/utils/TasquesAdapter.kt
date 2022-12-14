@@ -42,7 +42,7 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         viewHolder.binding.progressBarTasquesCompletat.progress = tasca.progress
 
         // Intent per obrir la camara
-        viewHolder.binding.ButtonCard.setOnClickListener() {
+        viewHolder.binding.ButtonCard.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
         }

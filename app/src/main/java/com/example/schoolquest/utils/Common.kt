@@ -5,22 +5,20 @@ import android.content.Context
 
 object Common {
 
-    public fun checkCredencials(email: String, password: String, ctx: Context): Boolean{ //Funció que verifica email y contrasenya.
-        var checked : Boolean = false
+    fun checkCredencials(email: String, password: String, ctx: Context): Boolean{ //Funció que verifica email y contrasenya.
         val pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`\\{|\\}~]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\$".toRegex()
 
         //Verificar format del correu
         if (pattern.containsMatchIn(email)) {
             //Verificar que la contrasenya no sigui buida
-            when (password) {
+            return when (password) {
                 "" -> {
                     dialogBuilder("La contrasenya no pot ser buida","Error", ctx)
-                    return false
+                    false
 
                 }
                 else -> {
-                    checked = true;
-                    return checked
+                    true
                 }
             }
         } else {
@@ -30,7 +28,7 @@ object Common {
         }
     }
 
-    public fun dialogBuilder(message: String, title: String, ctx: Context) {
+    fun dialogBuilder(message: String, title: String, ctx: Context) {
         val dialog = AlertDialog.Builder(ctx)
             .setTitle(title)
             .setMessage(message)

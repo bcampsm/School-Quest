@@ -7,7 +7,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.TasquesProfessorCardsBinding
-import com.google.android.material.snackbar.Snackbar
 
 class TasquesProfessorAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapter<TasquesProfessorAdapter.ViewHolder>() {
 

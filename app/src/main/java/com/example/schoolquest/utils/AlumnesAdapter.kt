@@ -5,13 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
-import com.example.schoolquest.databinding.ExitsAlumneCardsBinding
+import com.example.schoolquest.databinding.LlistaAlumnesCardsBinding
 
-class ExitsAdapter (private val mExits: List<Exits>) : RecyclerView.Adapter<ExitsAdapter.ViewHolder>() {
+class AlumnesAdapter (private val mAlumnes: List<Alumnes>) : RecyclerView.Adapter<AlumnesAdapter.ViewHolder>() {
 
     // Invocar el binding
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding = ExitsAlumneCardsBinding.bind(itemView)
+        val binding = LlistaAlumnesCardsBinding.bind(itemView)
     }
 
     // Inflar layout
@@ -19,7 +19,7 @@ class ExitsAdapter (private val mExits: List<Exits>) : RecyclerView.Adapter<Exit
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         // Inflate the custom layout
-        val contactView = inflater.inflate(R.layout.exits_alumne_cards, parent, false)
+        val contactView = inflater.inflate(R.layout.llista_alumnes_cards, parent, false)
         // Return a new holder instance
         return ViewHolder(contactView)
     }
@@ -27,15 +27,14 @@ class ExitsAdapter (private val mExits: List<Exits>) : RecyclerView.Adapter<Exit
     // Afegir les dades a cada tarjeta del recyclerView
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Obtenir dades del model
-        val exits: Exits = mExits[position]
+        val alumne: Alumnes = mAlumnes[position]
 
         // Asignar les dades a cada element
-        viewHolder.binding.nomExit.text = exits.Nom
-        viewHolder.binding.exitIcon.isEnabled = exits.Completat
+        viewHolder.binding.nomAlumne.text = alumne.Nom
     }
 
     // Returna la quantitat d'elements al recyclerView
     override fun getItemCount(): Int {
-        return mExits.size
+        return mAlumnes.size
     }
 }
