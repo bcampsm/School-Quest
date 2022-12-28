@@ -7,14 +7,32 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.TendaAlumneCardsBinding
 
+/**
+ * Adaptador de recompenses creades pel professor
+ *
+ * @property mRecompenses
+ */
 class TendaProfessorAdapter (private val mRecompenses : List<Recompenses>) : RecyclerView.Adapter<TendaProfessorAdapter.ViewHolder>() {
 
-    // Invocar el binding
+    /**
+     * Invoca el binding
+     *
+     * @constructor
+     * ViewHolder
+     *
+     * @param itemView
+     */
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = TendaAlumneCardsBinding.bind(itemView)
     }
 
-    // Inflar layout
+    /**
+     * Infla el layout del fragment
+     *
+     * @param parent
+     * @param viewType
+     * @return ViewHolder
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
@@ -24,7 +42,12 @@ class TendaProfessorAdapter (private val mRecompenses : List<Recompenses>) : Rec
         return ViewHolder(contactView)
     }
 
-    // Afegir les dades a cada tarjeta del recyclerView
+    /**
+     * Inserta les dades en els camps corresponents del recycler view
+     *
+     * @param viewHolder
+     * @param position
+     */
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Obtenir dades del model
         val recompenses: Recompenses = mRecompenses[position]
@@ -34,7 +57,11 @@ class TendaProfessorAdapter (private val mRecompenses : List<Recompenses>) : Rec
         viewHolder.binding.preuRecompensa.text = recompenses.Preu.toString() + " SP"
     }
 
-    // Returna la quantitat d'elements al recyclerView
+    /**
+     * Retorna la quantitat d'elements a la llista
+     *
+     * @return Int
+     */
     override fun getItemCount(): Int {
         return mRecompenses.size
     }

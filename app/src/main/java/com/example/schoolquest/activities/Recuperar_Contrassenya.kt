@@ -7,8 +7,18 @@ import com.example.schoolquest.databinding.ActivityRecuperarContrassenyaBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+/**
+ * Pantalla on l'usuari pot recuperar la seva contrasenya si l'ha perdut
+ *
+ */
 class Recuperar_Contrassenya : AppCompatActivity() {
 
+    /**
+     * Codi principal on es controla el boto i camp de text per recuperar la contrasenya,
+     * indicant amb un missatge si la tasca ha sigut exitosa
+     *
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)

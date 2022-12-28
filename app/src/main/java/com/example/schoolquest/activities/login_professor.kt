@@ -12,11 +12,21 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+/**
+ * Pantalla on l'usuari professor introdueix les seves credencials per iniciar sessió
+ *
+ */
 class login_professor : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityLoginProfessorBinding
 
+    /**
+     * Codi principal de la pantalla on es controlen els botons i camps de text, i crida a l'activitat
+     * per recuperar la contrasenya si es necessari
+     *
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
@@ -51,7 +61,12 @@ class login_professor : AppCompatActivity() {
         }
     }
 
-    //Metode per verificar si l'usuari ha pogut iniciar sessió
+    /**
+     * Verifica si l'usuari ha pogut iniciar sessió
+     *
+     * @param email
+     * @param password
+     */
     private fun loginProfessor(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->

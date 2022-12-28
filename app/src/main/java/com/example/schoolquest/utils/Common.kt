@@ -3,8 +3,21 @@ package com.example.schoolquest.utils
 import android.app.AlertDialog
 import android.content.Context
 
+/**
+ * Funcions utilitzades a diferents clases
+ *
+ * @constructor Create empty Common
+ */
 object Common {
 
+    /**
+     * Comprova que el formas de les credencials sigui valid
+     *
+     * @param email
+     * @param password
+     * @param ctx
+     * @return
+     */
     fun checkCredencials(email: String, password: String, ctx: Context): Boolean{ //Funció que verifica email y contrasenya.
         val pattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`\\{|\\}~]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\$".toRegex()
 
@@ -28,6 +41,13 @@ object Common {
         }
     }
 
+    /**
+     * Genera un un avís amb els paràmetres proporcionats
+     *
+     * @param message
+     * @param title
+     * @param ctx
+     */
     fun dialogBuilder(message: String, title: String, ctx: Context) {
         val dialog = AlertDialog.Builder(ctx)
             .setTitle(title)

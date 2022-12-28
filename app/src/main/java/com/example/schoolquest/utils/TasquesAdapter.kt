@@ -11,14 +11,32 @@ import com.example.schoolquest.R
 import com.example.schoolquest.activities.MainActivity
 import com.example.schoolquest.databinding.TasquesAlumneCardsBinding
 
+/**
+ * Adaptador de tasques disponibles als alumnes
+ *
+ * @property mTasques
+ */
 class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapter<TasquesAdapter.ViewHolder>() {
 
-    // Invocar el binding
+    /**
+     * Invoca el binding
+     *
+     * @constructor
+     * ViewHolder
+     *
+     * @param itemView
+     */
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = TasquesAlumneCardsBinding.bind(itemView)
     }
 
-    // Inflar layout
+    /**
+     * Infla el layout del fragment
+     *
+     * @param parent
+     * @param viewType
+     * @return ViewHolder
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
@@ -28,7 +46,12 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         return ViewHolder(contactView)
     }
 
-    // Afegir les dades a cada tarjeta del recyclerView
+    /**
+     * Inserta les dades en els camps corresponents del recycler view
+     *
+     * @param viewHolder
+     * @param position
+     */
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Obtenir dades del model
         val tasca: Tasques = mTasques[position]
@@ -48,7 +71,11 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
         }
     }
 
-    // Returna la quantitat d'elements al recyclerView
+    /**
+     * Retorna la quantitat d'elements a la llista
+     *
+     * @return Int
+     */
     override fun getItemCount(): Int {
         return mTasques.size
     }

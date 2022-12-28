@@ -7,14 +7,32 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.schoolquest.R
 import com.example.schoolquest.databinding.ExitsAlumneCardsBinding
 
+/**
+ * Adaptador del llistat d'exits al perfil de l'alumne
+ *
+ * @property mExits
+ */
 class ExitsAdapter (private val mExits: List<Exits>) : RecyclerView.Adapter<ExitsAdapter.ViewHolder>() {
 
-    // Invocar el binding
+    /**
+     * Invoca el binding
+     *
+     * @constructor
+     * ViewHolder
+     *
+     * @param itemView
+     */
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = ExitsAlumneCardsBinding.bind(itemView)
     }
 
-    // Inflar layout
+    /**
+     * Infla el layout del fragment
+     *
+     * @param parent
+     * @param viewType
+     * @return ViewHolder
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
@@ -24,7 +42,12 @@ class ExitsAdapter (private val mExits: List<Exits>) : RecyclerView.Adapter<Exit
         return ViewHolder(contactView)
     }
 
-    // Afegir les dades a cada tarjeta del recyclerView
+    /**
+     * Inserta les dades en els camps corresponents del recycler view
+     *
+     * @param viewHolder
+     * @param position
+     */
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Obtenir dades del model
         val exits: Exits = mExits[position]
@@ -34,7 +57,11 @@ class ExitsAdapter (private val mExits: List<Exits>) : RecyclerView.Adapter<Exit
         viewHolder.binding.exitIcon.isEnabled = exits.Completat
     }
 
-    // Returna la quantitat d'elements al recyclerView
+    /**
+     * Retorna la quantitat d'elements a la llista
+     *
+     * @return Int
+     */
     override fun getItemCount(): Int {
         return mExits.size
     }

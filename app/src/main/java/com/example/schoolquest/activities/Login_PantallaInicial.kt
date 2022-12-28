@@ -10,6 +10,10 @@ import androidx.core.content.ContextCompat
 import com.example.schoolquest.R.style.Theme_SchoolQuest
 import com.example.schoolquest.databinding.ActivityLoginPantallaInicialBinding
 
+/**
+ * Pantalla inicial on l'usuari indica si n'es un alumne o un professor
+ *
+ */
 class Login_PantallaInicial : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
