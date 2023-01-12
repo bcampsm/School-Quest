@@ -80,6 +80,9 @@ class MainActivity2 : AppCompatActivity() {
                 R.id.logOut2 -> {
                     val intent = Intent(this, Login_PantallaInicial::class.java)
                     startActivity(intent)
+                    overridePendingTransition(
+                        androidx.appcompat.R.anim.abc_grow_fade_in_from_bottom,
+                        com.google.android.material.R.anim.abc_fade_out)
                 }
             }
             binding.drawerLayout2.openDrawer(GravityCompat.START)

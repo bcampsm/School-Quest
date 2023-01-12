@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.schoolquest.R
 import com.example.schoolquest.R.style.Theme_SchoolQuest
 import com.example.schoolquest.databinding.ActivityLoginPantallaInicialBinding
 
@@ -39,12 +40,18 @@ class Login_PantallaInicial : AppCompatActivity() {
         binding.ButtonLogin1.setOnClickListener {
             val intent = Intent(this, Login_Alumne::class.java)
             startActivity(intent)
+            overridePendingTransition(
+                R.anim.slide_in_right,
+                com.google.android.material.R.anim.abc_fade_out)
         }
 
         //Botó per obrir login_professor.kt
         binding.ButtonLogin2.setOnClickListener {
             val intent = Intent(this, login_professor::class.java)
             startActivity(intent)
+            overridePendingTransition(
+                R.anim.slide_in_right,
+                com.google.android.material.R.anim.abc_fade_out)
         }
     }
 }

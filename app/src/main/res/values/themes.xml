@@ -13,6 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="colorAccent">@color/BlueLight</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowContentTransitions">true</item>
     </style>
     <style name="SplashScreen" parent="Theme.SchoolQuest">
         <item name="android:windowBackground">@drawable/splashscreen</item>

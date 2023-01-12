@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.schoolquest.R
 import com.example.schoolquest.utils.Common
 import com.example.schoolquest.databinding.ActivityLoginAlumneBinding
 import com.google.android.material.snackbar.Snackbar
@@ -43,15 +44,29 @@ class Login_Alumne : AppCompatActivity() {
 
             //Crida a metode per verificar credencials
             if (Common.checkCredencials(email, password, this)) {
-                loginUsuari(email, password)
+//                loginUsuari(email, password)
                 /*
                 Saltar-se el metode de login amb firebase, utilitzat quan es fan tests amb l'emulador
                 ja que tarda molt en fer connexions a la base de dades (problema global amb Android Studio).
                  */
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(
+                    androidx.appcompat.R.anim.abc_slide_in_bottom,
+                    com.google.android.material.R.anim.abc_fade_out)
             }
         }
+    }
+
+    /**
+     * Aplica animacions quan l'usuari torna enrere
+     *
+     */
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(
+            androidx.appcompat.R.anim.abc_grow_fade_in_from_bottom,
+            R.anim.slide_out_right)
     }
 
     /**
@@ -74,6 +89,9 @@ class Login_Alumne : AppCompatActivity() {
                     ).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    overridePendingTransition(
+                        androidx.appcompat.R.anim.abc_slide_in_bottom,
+                        com.google.android.material.R.anim.abc_fade_out)
                 } else {
                     //Si les credencials son incorrectes o hi ha un error de connexió, mostra aquest missatge
                     Snackbar.make(
