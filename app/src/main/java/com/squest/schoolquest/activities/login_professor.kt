@@ -50,11 +50,11 @@ class login_professor : AppCompatActivity() {
                 Saltar-se el metode de login amb firebase, utilitzat quan es fan tests amb l'emulador
                 ja que tarda molt en fer connexions a la base de dades (problema global amb Android Studio).
                  */
-//                val intent = Intent(this, MainActivity2::class.java)
-//                startActivity(intent)
-//                overridePendingTransition(
-//                    androidx.appcompat.R.anim.abc_slide_in_bottom,
-//                    com.google.android.material.R.anim.abc_fade_out)
+                val intent = Intent(this, MainActivity2::class.java)
+                startActivity(intent)
+                overridePendingTransition(
+                    androidx.appcompat.R.anim.abc_slide_in_bottom,
+                    com.google.android.material.R.anim.abc_fade_out)
             }
         }
 
