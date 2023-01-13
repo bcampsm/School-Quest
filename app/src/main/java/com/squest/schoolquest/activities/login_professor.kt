@@ -45,16 +45,16 @@ class login_professor : AppCompatActivity() {
 
             //Crida a metode per verificar credencials
             if (Common.checkCredencials(email, password, this)) {
-                loginProfessor(email, password)
+//                loginProfessor(email, password)
                 /*
                 Saltar-se el metode de login amb firebase, utilitzat quan es fan tests amb l'emulador
                 ja que tarda molt en fer connexions a la base de dades (problema global amb Android Studio).
                  */
-//                val intent = Intent(this, MainActivity2::class.java)
-//                startActivity(intent)
-//                overridePendingTransition(
-//                    androidx.appcompat.R.anim.abc_slide_in_bottom,
-//                    com.google.android.material.R.anim.abc_fade_out)
+                val intent = Intent(this, MainActivity2::class.java)
+                startActivity(intent)
+                overridePendingTransition(
+                    androidx.appcompat.R.anim.abc_slide_in_bottom,
+                    com.google.android.material.R.anim.abc_fade_out)
             }
         }
 

@@ -1,11 +1,15 @@
 package com.squest.schoolquest.utils
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squest.schoolquest.R
 import com.squest.schoolquest.activities.MainActivity
@@ -66,8 +70,20 @@ class TasquesAdapter (private val mTasques: List<Tasques>) : RecyclerView.Adapte
 
         // Intent per obrir la camara
         viewHolder.binding.ButtonCard.setOnClickListener {
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
+            // Verificacio de permissos per utilitzar la camara
+            if (ContextCompat.checkSelfPermission(
+                    MainActivity.miMainActivity,
+                    Manifest.permission.CAMERA,
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    MainActivity.miMainActivity,
+                    arrayOf(Manifest.permission.CAMERA), 200
+                )
+            } else {
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(MainActivity.miMainActivity, intent, 200, null)
+            }
         }
     }
 
