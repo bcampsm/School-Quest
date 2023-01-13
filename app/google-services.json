@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1086077724469:android:456330a9103dda03fd4e7c",
         "android_client_info": {
-          "package_name": "com.example.schoolquest"
+          "package_name": "com.squest.schoolquest"
         }
       },
       "oauth_client": [

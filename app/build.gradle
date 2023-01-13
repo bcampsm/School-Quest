@@ -7,11 +7,11 @@ plugins {
 
 
 android {
-    namespace 'com.example.schoolquest'
+    namespace 'com.squest.schoolquest'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.schoolquest"
+        applicationId "com.squest.schoolquest"
         minSdk 30
         targetSdk 32
         versionCode 1
