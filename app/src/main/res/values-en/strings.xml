@@ -50,4 +50,7 @@
     <string name="botiga_de_recompenses">Reward shop</string>
     <string name="configuraci">Settings</string>
     <string name="tancar_sessi">Log out</string>
+    <string name="grup_a_select">Group A</string>
+    <string name="grup_b_select">Group B</string>
+    <string name="grup_c_select">Group C</string>
 </resources>

@@ -50,4 +50,7 @@
     <string name="botiga_de_recompenses">Tienda de recompensas</string>
     <string name="configuraci">Configuración</string>
     <string name="tancar_sessi">Cerrar sesión</string>
+    <string name="grup_a_select">Grupo A</string>
+    <string name="grup_b_select">Grupo B</string>
+    <string name="grup_c_select">Grupo C</string>
 </resources>
