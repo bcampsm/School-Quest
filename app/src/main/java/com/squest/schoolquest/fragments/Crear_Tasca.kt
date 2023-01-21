@@ -1,10 +1,13 @@
 package com.squest.schoolquest.fragments
 
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squest.schoolquest.R
 import com.squest.schoolquest.databinding.FragmentCrearTascaBinding
@@ -51,14 +54,39 @@ class Crear_Tasca : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val random = java.util.Random()
+        val randomNumber = random.nextInt(99999) + 10000
+
         binding.buttonCrearTasca.setOnClickListener {
 
-//            db.collection("Tasks").document(auth.uid.toString()).set(
-//                hashMapOf("User" to binding.inputEmailP.text.toString(),
-//                    "Name" to binding.inputNameP.text.toString(),
-//                    "Surname1" to binding.inputSurname1P.text.toString(),
-//                    "Surname2" to binding.inputSurname2P.text.toString())
-//            )
+
+            db.collection("Tasks").document("Task"+randomNumber).set(
+                hashMapOf("Name" to binding.textFieldNovaTasca.text.toString(),
+                    "Description" to binding.textFieldDescripcio.text.toString(),
+                    "StartDate" to binding.textFieldData.text.toString(),
+                    "FinishDate" to binding.textFieldDataFinish.text.toString(),
+                    "SP" to binding.textFieldSP.text.toString(),
+                    "Experience" to binding.textFieldXP.text.toString(),
+                    "StudentsFinished" to "0")
+            )
+
+            val documentReference = db.collection("Groups").document("GrupA")
+            documentReference.get().addOnSuccessListener { documentSnapshot ->
+                val myArrayField = documentSnapshot.get("Tasks") as ArrayList<Any>
+                myArrayField.add("Task"+randomNumber)
+                val newData = hashMapOf("Tasks" to myArrayField) as MutableMap<String, Any>
+                documentReference.update(newData)
+            }
+
+            val dialog = AlertDialog.Builder(context)
+                    .setTitle(getString(R.string.CreacioTasca))
+                    .setMessage(getString(R.string.TascaCreada))
+                    .create()
+                dialog.show()
+
+
+            Navigation.findNavController(it)
+                .navigate(R.id.action_crear_Tasca_to_tasques_Professor)
 
         }
 

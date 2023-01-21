@@ -69,12 +69,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="30dp"
-                android:hint="@string/data"
-                app:helperText="@string/data"
+                android:hint="@string/data_inicial"
+                app:helperText="@string/data_inicial"
                 app:helperTextEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textFieldData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutDataFinish"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="30dp"
+                android:hint="@string/data_final"
+                app:helperText="@string/data_final"
+                app:helperTextEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldDataFinish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="date" />
@@ -130,28 +149,6 @@
 
 
             </LinearLayout>
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:checkedButton="@+id/radio_button_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/radio_button_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/grup_a_select"/>
-                <RadioButton
-                    android:id="@+id/radio_button_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/grup_b_select"/>
-                <RadioButton
-                    android:id="@+id/radio_button_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/grup_c_select"/>
-            </RadioGroup>
 
             <Button
                 android:id="@+id/buttonCrearTasca"
