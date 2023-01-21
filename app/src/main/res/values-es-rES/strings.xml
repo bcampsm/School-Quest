@@ -53,4 +53,8 @@
     <string name="grup_a_select">Grupo A</string>
     <string name="grup_b_select">Grupo B</string>
     <string name="grup_c_select">Grupo C</string>
+    <string name="reviewDialog">Si te gusta SchoolQuest, por favor deja una reseña. Gracias por su apoyo!</string>
+    <string name="rateButton">Valora SchoolQuest</string>
+    <string name="askLater">Preguntame más tarde</string>
+    <string name="noThanks">No, grácias</string>
 </resources>

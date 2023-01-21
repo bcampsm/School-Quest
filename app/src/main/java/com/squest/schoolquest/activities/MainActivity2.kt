@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.squest.schoolquest.R
 import com.squest.schoolquest.databinding.ActivityMain2Binding
+import com.squest.schoolquest.utils.CustomDialog
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -87,19 +88,7 @@ class MainActivity2 : AppCompatActivity() {
             }
             binding.drawerLayout2.openDrawer(GravityCompat.START)
 
-//            binding.navigationView2.postDelayed(
-//                {
-//                    val transaction = fragmentManager.beginTransaction()
-//                    transaction.replace(R.id.fragmentContainerView, fragment)
-//                    transaction.addToBackStack(null)
-//                    transaction.commit()
-//                }, 275
-//            )
-            //Navigation Component
-
             binding.drawerLayout2.close()
-
-
 
             true
         }
@@ -108,6 +97,10 @@ class MainActivity2 : AppCompatActivity() {
             Navigation.findNavController(binding.fragmentContainerView2)
                 .navigate(R.id.action_global_tasques_Professor)
         }, 1)
+
+        // Cridar al metode per demanar una resenya
+        CustomDialog(this).appLaunched(
+            getString(R.string.rateButton), getString(R.string.reviewDialog))
 
     }
 
