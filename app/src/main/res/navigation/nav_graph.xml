@@ -66,11 +66,19 @@
     <fragment
         android:id="@+id/crear_Recompensa"
         android:name="com.squest.schoolquest.fragments.Crear_Recompensa"
-        android:label="Crear_Recompensa" />
+        android:label="Crear_Recompensa" >
+        <action
+            android:id="@+id/action_crear_Recompensa_to_tenda_Professor"
+            app:destination="@id/tenda_Professor" />
+    </fragment>
     <fragment
         android:id="@+id/crear_Tasca"
         android:name="com.squest.schoolquest.fragments.Crear_Tasca"
-        android:label="Crear_Tasca" />
+        android:label="Crear_Tasca" >
+        <action
+            android:id="@+id/action_crear_Tasca_to_tasques_Professor"
+            app:destination="@id/tasques_Professor" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity2"
         android:name="com.squest.schoolquest.activities.MainActivity2"

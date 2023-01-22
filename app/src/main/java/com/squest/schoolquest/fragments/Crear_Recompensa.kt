@@ -1,11 +1,16 @@
 package com.squest.schoolquest.fragments
 
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.squest.schoolquest.R
+import com.squest.schoolquest.databinding.FragmentCrearRecompensaBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +27,8 @@ class Crear_Recompensa : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding : FragmentCrearRecompensaBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,12 +37,53 @@ class Crear_Recompensa : Fragment() {
         }
     }
 
+    private val db = FirebaseFirestore.getInstance()
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crear__recompensa, container, false)
+        _binding = FragmentCrearRecompensaBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val random = java.util.Random()
+        val randomNumber = random.nextInt(99999) + 10000
+
+        binding.buttonCrearRecompensa.setOnClickListener {
+
+
+            db.collection("Rewards").document("Reward"+randomNumber).set(
+                hashMapOf("name" to binding.textFieldNovaTasca.text.toString(),
+                    "SP" to binding.textFieldSP.text.toString())
+            )
+
+            val documentReference = db.collection("Groups").document("GrupA")
+            documentReference.get().addOnSuccessListener { documentSnapshot ->
+                val myArrayField = documentSnapshot.get("Rewards") as ArrayList<Any>
+                myArrayField.add("Reward"+randomNumber)
+                val newData = hashMapOf("Tasks" to myArrayField) as MutableMap<String, Any>
+                documentReference.update(newData)
+            }
+
+
+            val dialog = AlertDialog.Builder(context)
+                .setTitle(getString(R.string.CrecioRecompensa))
+                .setMessage(getString(R.string.RecompensaCreada))
+                .create()
+            dialog.show()
+
+
+            Navigation.findNavController(it)
+                .navigate(R.id.action_crear_Recompensa_to_tenda_Professor)
+
+        }
     }
 
     companion object {

@@ -60,6 +60,12 @@
     <string name="grup_a_select">Grup A</string>
     <string name="grup_b_select">Grup B</string>
     <string name="grup_c_select">Grup C</string>
+    <string name="data_final">Data final</string>
+    <string name="data_inicial">Data inicial</string>
+    <string name="CrecioRecompensa">Creació de recompensa</string>
+    <string name="RecompensaCreada">Recompensa creada</string>
+    <string name="CreacioTasca">Creació de tasca</string>
+    <string name="TascaCreada">Tasca creada</string>
     <string name="reviewDialog">Si t\'agrada SchoolQuest, si us plau feu una ressenya. Gràcies pel vostre suport!</string>
     <string name="rateButton">Valora SchoolQuest</string>
     <string name="askLater">Pregunta\'m més tard</string>
