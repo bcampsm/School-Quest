@@ -45,7 +45,45 @@ class Crear_Recompensa : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crear__recompensa, container, false)
+        _binding = FragmentCrearRecompensaBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val random = java.util.Random()
+        val randomNumber = random.nextInt(99999) + 10000
+
+        binding.buttonCrearRecompensa.setOnClickListener {
+
+
+            db.collection("Rewards").document("Reward"+randomNumber).set(
+                hashMapOf("name" to binding.textFieldNovaTasca.text.toString(),
+                    "SP" to binding.textFieldSP.text.toString())
+            )
+
+            val documentReference = db.collection("Groups").document("GrupA")
+            documentReference.get().addOnSuccessListener { documentSnapshot ->
+                val myArrayField = documentSnapshot.get("Rewards") as ArrayList<Any>
+                myArrayField.add("Reward"+randomNumber)
+                val newData = hashMapOf("Tasks" to myArrayField) as MutableMap<String, Any>
+                documentReference.update(newData)
+            }
+
+
+            val dialog = AlertDialog.Builder(context)
+                .setTitle(getString(R.string.CrecioRecompensa))
+                .setMessage(getString(R.string.RecompensaCreada))
+                .create()
+            dialog.show()
+
+
+            Navigation.findNavController(it)
+                .navigate(R.id.action_crear_Recompensa_to_tenda_Professor)
+
+        }
     }
 
     companion object {
@@ -66,41 +104,5 @@ class Crear_Recompensa : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val random = java.util.Random()
-        val randomNumber = random.nextInt(99999) + 10000
-
-//        binding.buttonCrearRecompensa.setOnClickListener {
-//
-//
-////            db.collection("Rewards").document("Reward"+randomNumber).set(
-////                hashMapOf("name" to binding.textFieldNovaTasca.text.toString(),
-////                    "SP" to binding.textFieldSP.text.toString())
-////            )
-//
-////            val documentReference = db.collection("Groups").document("GrupA")
-////            documentReference.get().addOnSuccessListener { documentSnapshot ->
-////                val myArrayField = documentSnapshot.get("Rewards") as ArrayList<Any>
-////                myArrayField.add("Reward"+randomNumber)
-////                val newData = hashMapOf("Tasks" to myArrayField) as MutableMap<String, Any>
-////                documentReference.update(newData)
-////            }
-//
-//
-////            val dialog = AlertDialog.Builder(context)
-////                .setTitle(getString(R.string.CrecioRecompensa))
-////                .setMessage(getString(R.string.RecompensaCreada))
-////                .create()
-////            dialog.show()
-////
-////
-////            Navigation.findNavController(it)
-////                .navigate(R.id.action_crear_Recompensa_to_tenda_Professor)
-//
-//        }
     }
 }
