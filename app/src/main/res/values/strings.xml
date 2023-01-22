@@ -66,4 +66,8 @@
     <string name="RecompensaCreada">Recompensa creada</string>
     <string name="CreacioTasca">Creació de tasca</string>
     <string name="TascaCreada">Tasca creada</string>
+    <string name="reviewDialog">Si t\'agrada SchoolQuest, si us plau feu una ressenya. Gràcies pel vostre suport!</string>
+    <string name="rateButton">Valora SchoolQuest</string>
+    <string name="askLater">Pregunta\'m més tard</string>
+    <string name="noThanks">No, gràcies</string>
 </resources>

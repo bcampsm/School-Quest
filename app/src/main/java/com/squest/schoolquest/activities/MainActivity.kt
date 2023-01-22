@@ -11,9 +11,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.squest.schoolquest.R
 import com.squest.schoolquest.databinding.ActivityMainBinding
+import com.squest.schoolquest.utils.CustomDialog
 
 class MainActivity : AppCompatActivity() {
 
+    //Companion object per tasques recyclerview
     companion object {
         lateinit var miMainActivity: MainActivity
     }
@@ -89,16 +91,6 @@ class MainActivity : AppCompatActivity() {
             }
             binding.drawerLayout.openDrawer(GravityCompat.START)
 
-//            binding.navigationView.postDelayed(
-//                {
-//                    val transaction = fragmentManager.beginTransaction()
-//                    transaction.replace(R.id.fragmentContainerView, fragment)
-//                    transaction.addToBackStack(null)
-//                    transaction.commit()
-//                }, 275
-//            )
-            //Navigation Component
-
             binding.drawerLayout.close()
 
             true
@@ -109,8 +101,11 @@ class MainActivity : AppCompatActivity() {
                 .navigate(R.id.action_global_tasques_Alumne)
         }, 1)
 
-    }
+        // Cridar al metode per demanar una resenya
+        CustomDialog(this).appLaunched(
+            getString(R.string.rateButton), getString(R.string.reviewDialog))
 
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toogle.onOptionsItemSelected(item)) {
