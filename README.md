@@ -1,5 +1,5 @@
 # School Quest
-<a href="https://play.google.com/store/apps/details?id=com.squest.schoolquest%22%3E<img src="https://user-images.githubusercontent.com/19367314/213999827-21df9f36-f5a1-4971-bc55-944d6f9e9785.png%22%3E</a>
+[<a href="https://play.google.com/store/apps/details?id=com.squest.schoolquest%22%3E<img src="https://user-images.githubusercontent.com/19367314/213999827-21df9f36-f5a1-4971-bc55-944d6f9e9785.png%22%3E</a>](https://play.google.com/store/apps/details?id=com.squest.schoolquest)
 
 Desenvolupat per: Aitor perez i Brian Camps, alumnes de 2DAMT de l'institut Nicolau Copernic.
 
